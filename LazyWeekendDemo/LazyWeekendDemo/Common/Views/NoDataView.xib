@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoDataView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-fe-70f">
+                    <rect key="frame" x="0.0" y="220" width="600" height="160"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_data" translatesAutoresizingMaskIntoConstraints="NO" id="34Y-ey-YjI">
+                            <rect key="frame" x="267" y="18" width="65" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="65" id="TsH-79-hHq"/>
+                                <constraint firstAttribute="height" constant="75" id="whn-cb-Rkb"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无收货地址" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzi-PW-hzL">
+                            <rect key="frame" x="0.0" y="112" width="600" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="KdP-4x-yKp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="抱歉没有搜索到相关的数据，请重试。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTg-gx-xje">
+                            <rect key="frame" x="0.0" y="139" width="600" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Fzi-PW-hzL" firstAttribute="top" secondItem="34Y-ey-YjI" secondAttribute="bottom" constant="19" id="5q6-TJ-wIg"/>
+                        <constraint firstItem="UTg-gx-xje" firstAttribute="top" secondItem="Fzi-PW-hzL" secondAttribute="bottom" constant="6" id="C9O-jh-afr"/>
+                        <constraint firstItem="34Y-ey-YjI" firstAttribute="centerX" secondItem="Dpv-fe-70f" secondAttribute="centerX" id="F6F-Iv-hTI"/>
+                        <constraint firstAttribute="trailing" secondItem="Fzi-PW-hzL" secondAttribute="trailing" id="IAw-Aw-R0b"/>
+                        <constraint firstAttribute="height" constant="160" id="KK1-bK-Q6V"/>
+                        <constraint firstItem="34Y-ey-YjI" firstAttribute="top" secondItem="Dpv-fe-70f" secondAttribute="top" constant="18" id="Lv4-H4-aTH"/>
+                        <constraint firstAttribute="trailing" secondItem="UTg-gx-xje" secondAttribute="trailing" id="cMC-ff-31a"/>
+                        <constraint firstAttribute="bottom" secondItem="UTg-gx-xje" secondAttribute="bottom" id="p2G-cH-Gw3"/>
+                        <constraint firstItem="Fzi-PW-hzL" firstAttribute="leading" secondItem="Dpv-fe-70f" secondAttribute="leading" id="sfc-3j-2p0"/>
+                        <constraint firstItem="UTg-gx-xje" firstAttribute="leading" secondItem="Dpv-fe-70f" secondAttribute="leading" id="zo9-By-7jR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Dpv-fe-70f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ly2-JO-lGl"/>
+                <constraint firstAttribute="trailing" secondItem="Dpv-fe-70f" secondAttribute="trailing" id="M5p-9S-kSW"/>
+                <constraint firstItem="Dpv-fe-70f" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ny0-xb-2li"/>
+                <constraint firstItem="Dpv-fe-70f" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="trB-Xc-XY7"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <connections>
+                <outlet property="contentView" destination="Dpv-fe-70f" id="aTH-7W-yAD"/>
+                <outlet property="descLabel" destination="UTg-gx-xje" id="VUP-O0-vSH"/>
+                <outlet property="titleLabel" destination="Fzi-PW-hzL" id="xWX-vY-gWd"/>
+            </connections>
+            <point key="canvasLocation" x="17" y="171"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no_data" width="64" height="74"/>
+    </resources>
+</document>

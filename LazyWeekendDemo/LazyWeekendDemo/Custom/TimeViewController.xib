@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeViewController">
+            <connections>
+                <outlet property="addBtn" destination="nFS-cK-VDd" id="Nhv-br-WgS"/>
+                <outlet property="cancelBtn" destination="0xr-wy-eu3" id="RpN-4i-uai"/>
+                <outlet property="customPicker" destination="qxI-VP-hgf" id="nVz-Mq-uGu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg2-SE-O7r">
+                    <rect key="frame" x="0.0" y="364" width="600" height="236"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-VP-hgf">
+                            <rect key="frame" x="0.0" y="35" width="600" height="162"/>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </pickerView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYG-41-0yd">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xr-wy-eu3">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="WJu-Sy-7dm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="取消">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionCancel:" destination="-1" eventType="touchUpInside" id="f4B-bP-kDA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFS-cK-VDd">
+                                    <rect key="frame" x="550" y="0.0" width="50" height="35"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="5eT-ZE-WaS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="完成">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionDone:" destination="-1" eventType="touchUpInside" id="zik-5j-l1a"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKh-nI-AxJ" userLabel="下划线">
+                                    <rect key="frame" x="0.0" y="34" width="600" height="1"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="yzw-Kb-l9c"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="0xr-wy-eu3" firstAttribute="leading" secondItem="tYG-41-0yd" secondAttribute="leading" id="2O6-kx-STi"/>
+                                <constraint firstAttribute="bottom" secondItem="0xr-wy-eu3" secondAttribute="bottom" id="7F5-nz-tGh"/>
+                                <constraint firstItem="nFS-cK-VDd" firstAttribute="top" secondItem="tYG-41-0yd" secondAttribute="top" id="Gal-kN-wFh"/>
+                                <constraint firstAttribute="height" constant="35" id="Klj-f8-RbO"/>
+                                <constraint firstItem="AKh-nI-AxJ" firstAttribute="leading" secondItem="tYG-41-0yd" secondAttribute="leading" id="OY9-aQ-Ox6"/>
+                                <constraint firstItem="0xr-wy-eu3" firstAttribute="top" secondItem="tYG-41-0yd" secondAttribute="top" id="TDO-1a-9uS"/>
+                                <constraint firstAttribute="bottom" secondItem="AKh-nI-AxJ" secondAttribute="bottom" id="YSl-dY-NXW"/>
+                                <constraint firstAttribute="trailing" secondItem="AKh-nI-AxJ" secondAttribute="trailing" id="onH-P0-UnT"/>
+                                <constraint firstAttribute="trailing" secondItem="nFS-cK-VDd" secondAttribute="trailing" id="vOM-tW-dpC"/>
+                                <constraint firstAttribute="bottom" secondItem="nFS-cK-VDd" secondAttribute="bottom" id="zFH-j0-kXd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qxI-VP-hgf" firstAttribute="top" secondItem="tYG-41-0yd" secondAttribute="bottom" id="Bbc-lG-KMF"/>
+                        <constraint firstItem="tYG-41-0yd" firstAttribute="top" secondItem="eg2-SE-O7r" secondAttribute="top" id="KCB-fG-WrZ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="236" id="LZK-zm-8dM"/>
+                        <constraint firstItem="tYG-41-0yd" firstAttribute="leading" secondItem="eg2-SE-O7r" secondAttribute="leading" id="O40-QT-bF0"/>
+                        <constraint firstItem="qxI-VP-hgf" firstAttribute="leading" secondItem="eg2-SE-O7r" secondAttribute="leading" id="P5v-vz-0IK"/>
+                        <constraint firstAttribute="centerX" secondItem="qxI-VP-hgf" secondAttribute="centerX" id="V4L-DT-dai"/>
+                        <constraint firstAttribute="height" constant="236" id="Xb9-rQ-Ljd"/>
+                        <constraint firstAttribute="trailing" secondItem="qxI-VP-hgf" secondAttribute="trailing" id="YzE-8b-6to"/>
+                        <constraint firstAttribute="trailing" secondItem="tYG-41-0yd" secondAttribute="trailing" id="uTt-Ns-Zac"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eg2-SE-O7r" secondAttribute="trailing" id="YNw-nh-m7s"/>
+                <constraint firstAttribute="bottom" secondItem="eg2-SE-O7r" secondAttribute="bottom" id="nwh-iq-QpE"/>
+                <constraint firstItem="eg2-SE-O7r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oqh-Ir-Snc"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="YGo-t2-spF" appends="YES" id="Drm-gG-Szd"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="YGo-t2-spF">
+            <connections>
+                <action selector="actionCancel:" destination="-1" id="fmE-FX-Bfg"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
