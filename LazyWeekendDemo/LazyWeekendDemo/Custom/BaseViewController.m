@@ -11,8 +11,6 @@
   */
 
 #import "BaseViewController.h"
-//#import "NormalAlertViewController.h"//通用弹框
-#import "JGActionSheet.h"
 #import "AppDelegate.h"
 
 @interface BaseViewController ()<MBProgressHUDDelegate>
@@ -169,42 +167,6 @@
 //        [viewController setTitle:title smallTitle:smallTitle detail:detail];
 //        [viewController setAlertType:alertType];
 //    }];
-}
-
-//显示选择照片图片弹框
-- (void)showSimpleSheet:(UIView *)anchor{
-    
-    //This is am example of an action sheet that is reused!
-    if (!_simpleSheet) {
-        _simpleSheet = [JGActionSheet actionSheetWithSections:@[[JGActionSheetSection sectionWithTitle:@"" message:@"" buttonTitles:@[@"拍照", @"相册"] buttonStyle:JGActionSheetButtonStyleDefault], [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"取消"] buttonStyle:JGActionSheetButtonStyleCancel]]];
-        
-        _simpleSheet.delegate = self;
-        
-        _simpleSheet.insets = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-        
-        if (iPad) {
-            [_simpleSheet setOutsidePressBlock:^(JGActionSheet *sheet) {
-                [sheet dismissAnimated:YES];
-            }];
-        }
-        
-        [_simpleSheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
-            [sheet dismissAnimated:YES];
-        }];
-    }
-    
-    if (anchor && iPad) {
-        
-        CGPoint p = (CGPoint){-5.0f, CGRectGetMidY(anchor.bounds)};
-        
-        p = [self.navigationController.view convertPoint:p fromView:anchor];
-        
-        [_simpleSheet showFromPoint:p inView:[[UIApplication sharedApplication] keyWindow] arrowDirection:JGActionSheetArrowDirectionRight animated:YES];
-    }
-    else {
-        [_simpleSheet showInView:self.navigationController.view animated:YES];
-    }
-    
 }
 
 /**

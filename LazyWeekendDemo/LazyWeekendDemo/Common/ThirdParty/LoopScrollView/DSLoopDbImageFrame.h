@@ -22,7 +22,7 @@
 @interface DSLoopDbImageFrame : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate>
 {
     BOOL _isAutoPlay;
-    int _displayType; //1:攻略表示模式  2:商家详细-商品表示 3:现金券-表头广告
+    int _displayType;
 }
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<DSLoopDbImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto;

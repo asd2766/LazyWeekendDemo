@@ -21,17 +21,9 @@
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 #import "CoreData+MagicalRecord.h"
-#import "AFNetworking.h"
-#import "RequestHelper.h"
-#import "CoreData+MagicalRecord.h"
 #import "MBProgressHUD.h"
 #import "NoDataView.h"
 #import "MJRefresh.h"
-#import "JGActionSheet.h"
-#import "CZPhotoPickerController.h"
-#import "ELCImagePickerHeader.h"
-#import "UITextField+AKNumericFormatter.h"
-#import "AKNumericFormatter.h"
 #import "YYModel.h"
 
 #import "CoreData+MagicalRecord.h"
@@ -42,17 +34,13 @@ typedef NS_ENUM(NSInteger, NormalAlertType) {
     NormalAlertSelectedType  //弹出认证
 };
 
-@interface BaseViewController : UIViewController<MBProgressHUDDelegate, JGActionSheetDelegate>{
+@interface BaseViewController : UIViewController<MBProgressHUDDelegate>{
     long chooseImageCount;
 }
 
 @property (strong, nonatomic) MBProgressHUD *progressHUD;//加载框（菊花转）
 
 @property (strong, nonatomic) NoDataView *noDataView;//没有数据页面
-
-//选择图片
-@property (strong, nonatomic) JGActionSheet *simpleSheet;
-@property(nonatomic,strong) CZPhotoPickerController *pickPhotoController;
 
 /**
  *  添加正在加载框
@@ -82,10 +70,6 @@ typedef NS_ENUM(NSInteger, NormalAlertType) {
 - (void)showNormalAlertView:(NSString *)title smallTitle:(NSString *)smallTitle
                      detail:(NSString *)detail alertType:(NormalAlertType)alertType;
 
-/** 显示选择照片图片弹框
- * @param anchor        显示的页面
- */
-- (void)showSimpleSheet:(UIView *)anchor;
 
 /**
  *  是否显示没有数据页面

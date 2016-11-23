@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Vincent Tang. All rights reserved.
 //
 typedef enum {
-    SGFocusOneyText,
-    SGFocusOneyImage,
-    SGFocusOneyImageAndPageControl,
-    SGFocusUIImageType,
-    SGFocusOneyTradeText,
-    SGFocusNews
-}SGFocusImageType;
+    SGFocusOneyText, // 文字
+    SGFocusOneyImage, // 图片
+    SGFocusOneyImageAndPageControl, // 图片 + 底部的点
+    SGFocusUIImageType, // UIImage 类型
+    SGFocusOneyTradeText, // 交易信息
+    SGFocusNews // 新闻类型
+} SGFocusImageType;
 
 #import <UIKit/UIKit.h>
 @class SGFocusImageItem;
@@ -33,16 +33,13 @@ typedef enum {
 {
     BOOL _isAutoPlay;
     int _focusImageType;
-    int _displayType;
 }
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(SGFocusImageType )focusImageType andWithisVertical:(BOOL )isVertical;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto;
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items;
-
-- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto displayType:(int)displayType;
-- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(int)focusImageType;
+- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(SGFocusImageType)focusImageType;
 - (void)scrollToIndex:(int)aIndex;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto imageType:(NSString*)type;

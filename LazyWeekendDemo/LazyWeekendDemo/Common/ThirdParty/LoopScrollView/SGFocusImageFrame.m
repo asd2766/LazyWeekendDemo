@@ -54,38 +54,17 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto
 {
-    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES displayType:0];
+    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES focusImageType: SGFocusOneyImageAndPageControl];
 }
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto imageType:(NSString*)type{
     
     self.imageType = type;
-    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES displayType:0];
+    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES focusImageType: SGFocusOneyImageAndPageControl];
     
 }
 
-- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto displayType:(int)displayType {
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        self.imageItems = [NSMutableArray arrayWithArray:items];
-        if (items.count > 1) {
-            //增加最后一条和第一条循环
-            [self.imageItems insertObject:items[items.count - 1] atIndex:0];
-            [self.imageItems addObject:items[0]];
-        }
-        
-        _isAutoPlay = isAuto;
-        _displayType = displayType;
-        
-        [self setupViews];
-        
-        [self setDelegate:delegate];
-    }
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(int)focusImageType{
+- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(SGFocusImageType)focusImageType{
     self = [super initWithFrame:frame];
     if (self)
     {
@@ -161,11 +140,11 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
                 SGFocusImageItem *item = [_imageItems objectAtIndex:i];
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space)];
                 //加载图片
-                if (_displayType == SGFocusUIImageType) {
+                if (_focusImageType == SGFocusUIImageType) {
                     imageView.image = item.image;
                 }else{
 
-                     [CommonUtil setSDWebImageProperties];
+                    [CommonUtil setSDWebImageProperties];
                     
                     [imageView sd_setImageWithURL:[NSURL URLWithString:item.imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                         
@@ -203,7 +182,7 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
                 SGFocusImageItem *item = [_imageItems objectAtIndex:i];
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space)];
                 //显示图片
-                if (_displayType == SGFocusUIImageType) {
+                if (_focusImageType == SGFocusUIImageType) {
                     imageView.image = item.image;
                 }else{
                     
@@ -368,7 +347,7 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     _scrollView.scrollsToTop = NO;
     float space = 0;
     float buttomSpace = 0;
-    if (_displayType == 1) {
+    if (_focusImageType == SGFocusOneyImageAndPageControl) {
         buttomSpace = 20;
     }
     
@@ -407,7 +386,7 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
         SGFocusImageItem *item = [_imageItems objectAtIndex:i];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space-size.height - buttomSpace)];
         
-        if (_displayType == SGFocusUIImageType) {
+        if (_focusImageType == SGFocusUIImageType) {
             imageView.image = item.image;
         }else{
             
