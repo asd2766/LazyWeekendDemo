@@ -10,15 +10,16 @@
 #import "UIImageView+WebCache.h"
 #import "CommonUtil.h"
 #import "Consts.h"
+#import "JQPaddingLabel.h"
 
 @interface IndexItemTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet JQPaddingLabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *collectionBtn;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet JQPaddingLabel *priceLabel;
 @end
 
 @implementation IndexItemTableViewCell
@@ -69,14 +70,16 @@
     self.locationLabel.text = [NSString stringWithFormat:@"目的地：%@", location];
     
     // 日期
-    self.timeLabel.text = [CommonUtil isEmpty:time] ? @"--" : time;
+    self.timeLabel.edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
+    self.timeLabel.text = [CommonUtil isEmpty:time] ? @" -- " : [NSString stringWithFormat:@"%@", time];
     
     // 收藏
-    NSString *desc = [NSString stringWithFormat:@"%d人收藏", [collectionNum intValue]];
+    NSString *desc = [NSString stringWithFormat:@"%d人收藏  ", [collectionNum intValue]];
     [self.collectionBtn setTitle:desc forState:UIControlStateNormal];
     
     // 价格
-    price = [CommonUtil isEmpty:price] ? @"--" : price;
+    self.priceLabel.edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
+    price = [CommonUtil isEmpty:price] ? @" -- " : price;
     price = [NSString stringWithFormat:@"￥%@", price];
     self.priceLabel.text = price;
 }

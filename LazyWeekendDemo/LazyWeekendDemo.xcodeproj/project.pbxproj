@@ -111,6 +111,7 @@
 		E8AE54E21DE2A61D00E3A292 /* IndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8AE54E01DE2A61D00E3A292 /* IndexViewController.xib */; };
 		E8AE54E71DE2D72A00E3A292 /* IndexItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE54E51DE2D72A00E3A292 /* IndexItemTableViewCell.m */; };
 		E8AE54E81DE2D72A00E3A292 /* IndexItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8AE54E61DE2D72A00E3A292 /* IndexItemTableViewCell.xib */; };
+		E8AE54FB1DE5390C00E3A292 /* JQPaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE54FA1DE5390C00E3A292 /* JQPaddingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +346,8 @@
 		E8AE54E41DE2D72A00E3A292 /* IndexItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexItemTableViewCell.h; sourceTree = "<group>"; };
 		E8AE54E51DE2D72A00E3A292 /* IndexItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexItemTableViewCell.m; sourceTree = "<group>"; };
 		E8AE54E61DE2D72A00E3A292 /* IndexItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexItemTableViewCell.xib; sourceTree = "<group>"; };
+		E8AE54F91DE5390C00E3A292 /* JQPaddingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPaddingLabel.h; sourceTree = "<group>"; };
+		E8AE54FA1DE5390C00E3A292 /* JQPaddingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPaddingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -822,6 +825,8 @@
 				E8AE54871DE29DF500E3A292 /* ZXTextField.m */,
 				E8AE54881DE29DF500E3A292 /* ZXView.h */,
 				E8AE54891DE29DF500E3A292 /* ZXView.m */,
+				E8AE54F91DE5390C00E3A292 /* JQPaddingLabel.h */,
+				E8AE54FA1DE5390C00E3A292 /* JQPaddingLabel.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1086,6 +1091,7 @@
 				E8AE53D31DE29DF000E3A292 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				E8AE54391DE29DF000E3A292 /* LimitInput.m in Sources */,
 				E8AE53E31DE29DF000E3A292 /* MJRefreshFooter.m in Sources */,
+				E8AE54FB1DE5390C00E3A292 /* JQPaddingLabel.m in Sources */,
 				E8AE53E51DE29DF000E3A292 /* MJRefreshAutoGifFooter.m in Sources */,
 				E8AE53E41DE29DF000E3A292 /* MJRefreshHeader.m in Sources */,
 				E8AE53ED1DE29DF000E3A292 /* MJRefreshStateHeader.m in Sources */,
