@@ -8,13 +8,22 @@
 
 #import "IndexViewController.h"
 #import "IndexItemTableViewCell.h"
+#import "MenuViewController.h"
 
-@interface IndexViewController ()
+@interface IndexViewController () {
+    CGFloat menuHeight;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
+@property (strong, nonatomic) UILabel *headerLabel;
+@property (strong, nonatomic) UIImageView *headerImageView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewTopConstaint;
+
 //参数
 @property (strong, nonatomic) NSMutableArray *dataArray;
+@property (strong, nonatomic) NSMutableArray *headerDescArray;// 顶部描述文字
 
 @end
 
@@ -24,8 +33,21 @@
     [super viewDidLoad];
     // 初始化参数
     self.dataArray = [NSMutableArray array];
+    self.headerDescArray = [NSMutableArray array];
     
     [self initData];
+    
+    [self initHeaderView];
+    
+    
+    self.title = @"懒人周末";
+    
+    // 设置左边按钮
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cat_me"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(showMenu)];
+    
+    // 设置右边按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_nav_search"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(showSearch)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +87,45 @@
            @"51", @"collectionNum", @"2880", @"price",
            nil];
     [self.dataArray addObject:dic];
+    
+    // 顶部描述文字
+    self.headerDescArray = [NSMutableArray arrayWithObjects:@"请把我留在最好的时光里。",
+                            @"睁眼，因为你心为所动。",  @"启程，只为追寻你所爱。", @"我们始终牵手旅行。", @"闭目，难掩喜悦与期待",
+                            @"致总有一天会出发的你。", @"要和有趣的人在一起才会快乐。", @"我们做最了解你的人。", @"保持一颗好奇心，因为世界是彩色的。",
+                            @"一起走吧，小懒猫。", nil];
+}
+
+- (void)initHeaderView {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -60, _screenWidth, 60)];
+    [self.mainTableView addSubview:headerView];
+    
+    _headerImageView = [[UIImageView alloc] init];
+    _headerImageView.image = [UIImage imageNamed:@"tip_cat"];
+    [headerView addSubview:_headerImageView];
+    
+    
+    _headerLabel = [[UILabel alloc] init];
+    _headerLabel.font = [UIFont systemFontOfSize:13];
+    _headerLabel.textColor = RGB(130, 130, 130);
+    [headerView addSubview:_headerLabel];
+    
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.x <= 0) {
+        // 开始下拉了
+        int index = arc4random() % (self.headerDescArray.count - 1);
+        NSString *str = self.headerDescArray[index];
+        self.headerLabel.text = str;
+        
+        // 计算位置
+        CGSize size = [CommonUtil sizeWithString:str fontSize:13 sizewidth:MAXFLOAT sizeheight:MAXFLOAT];
+        CGFloat maxWidth = size.width + 10 + 35; // 10: 图片与文字之间间隔  35： 图片宽度
+        CGFloat x = ceil((_screenWidth - maxWidth)/2);
+        self.headerImageView.frame = CGRectMake(x, ceil((60-35)/2), 35, 35);
+        self.headerLabel.frame = CGRectMake(CGRectGetMaxX(self.headerImageView.frame) + 10, CGRectGetMinY(self.headerImageView.frame), size.width, 35);
+    }
 }
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
@@ -118,6 +179,20 @@
  *  @param sender
  */
 - (IBAction)clickForMenu:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(menuClick:)]) {
+        [self.delegate menuClick:!button.tag];
+    }
+    
+    if (button.tag == 1) {
+        // 展开状态, 闭合操作
+        button.tag = 0;
+    } else {
+        // 闭合状态，展开操作
+        button.tag = 1;
+    }
+    
 }
 
 /**
@@ -126,5 +201,18 @@
  *  @param sender
  */
 - (IBAction)clickForSearch:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(searchClick:)]) {
+        [self.delegate searchClick:!button.tag];
+    }
+    
+    if (button.tag == 1) {
+        // 展开状态, 闭合操作
+        button.tag = 0;
+    } else {
+        // 闭合状态，展开操作
+        button.tag = 1;
+    }
 }
 @end

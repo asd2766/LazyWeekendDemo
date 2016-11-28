@@ -8,6 +8,16 @@
 
 #import "BaseViewController.h"
 
+@protocol IndexViewControllerDelegate <NSObject>
+
+@optional
+- (void)menuClick:(BOOL)isOpen;
+
+- (void)searchClick:(BOOL)isOpen;
+
+@end
+
 @interface IndexViewController : BaseViewController
 
+@property (assign, nonatomic) id<IndexViewControllerDelegate> delegate;
 @end

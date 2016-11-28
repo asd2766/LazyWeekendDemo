@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IndexViewController.h"
+#import "MenuViewController.h"
+#import "JQNavigationController.h"
+#import "SearchViewController.h"
+#import "BaseIndexViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
-
+@property (strong, nonatomic) JQNavigationController *navigationController;
+@property (strong, nonatomic) IndexViewController *indexViewController;
+@property (strong, nonatomic) MenuViewController *menuViewController;
+@property (strong, nonatomic) SearchViewController *searchViewController;
+@property (strong, nonatomic) BaseIndexViewController *baseIndexViewController;
 
 @end
 

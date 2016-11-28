@@ -112,6 +112,14 @@
 		E8AE54E71DE2D72A00E3A292 /* IndexItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE54E51DE2D72A00E3A292 /* IndexItemTableViewCell.m */; };
 		E8AE54E81DE2D72A00E3A292 /* IndexItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8AE54E61DE2D72A00E3A292 /* IndexItemTableViewCell.xib */; };
 		E8AE54FB1DE5390C00E3A292 /* JQPaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE54FA1DE5390C00E3A292 /* JQPaddingLabel.m */; };
+		E8AE55021DE5768800E3A292 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE55001DE5768800E3A292 /* MenuViewController.m */; };
+		E8AE55031DE5768800E3A292 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8AE55011DE5768800E3A292 /* MenuViewController.xib */; };
+		E8B795D41DE58B7B00E1572F /* BaseIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795D21DE58B7B00E1572F /* BaseIndexViewController.m */; };
+		E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B795D31DE58B7B00E1572F /* BaseIndexViewController.xib */; };
+		E8B795D81DE68AA900E1572F /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795D71DE68AA900E1572F /* UIView_extra.m */; };
+		E8B795E01DE8105800E1572F /* JQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795DF1DE8105800E1572F /* JQNavigationController.m */; };
+		E8B795E41DEC03CA00E1572F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795E21DEC03CA00E1572F /* SearchViewController.m */; };
+		E8B795E51DEC03CA00E1572F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B795E31DEC03CA00E1572F /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +356,19 @@
 		E8AE54E61DE2D72A00E3A292 /* IndexItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexItemTableViewCell.xib; sourceTree = "<group>"; };
 		E8AE54F91DE5390C00E3A292 /* JQPaddingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPaddingLabel.h; sourceTree = "<group>"; };
 		E8AE54FA1DE5390C00E3A292 /* JQPaddingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPaddingLabel.m; sourceTree = "<group>"; };
+		E8AE54FF1DE5768800E3A292 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		E8AE55001DE5768800E3A292 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		E8AE55011DE5768800E3A292 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		E8B795D11DE58B7B00E1572F /* BaseIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseIndexViewController.h; sourceTree = "<group>"; };
+		E8B795D21DE58B7B00E1572F /* BaseIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseIndexViewController.m; sourceTree = "<group>"; };
+		E8B795D31DE58B7B00E1572F /* BaseIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseIndexViewController.xib; sourceTree = "<group>"; };
+		E8B795D61DE68AA900E1572F /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
+		E8B795D71DE68AA900E1572F /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
+		E8B795DE1DE8105800E1572F /* JQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQNavigationController.h; sourceTree = "<group>"; };
+		E8B795DF1DE8105800E1572F /* JQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQNavigationController.m; sourceTree = "<group>"; };
+		E8B795E11DEC03CA00E1572F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		E8B795E21DEC03CA00E1572F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		E8B795E31DEC03CA00E1572F /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -795,6 +816,8 @@
 		E8AE535C1DE29DF000E3A292 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E8B795D61DE68AA900E1572F /* UIView_extra.h */,
+				E8B795D71DE68AA900E1572F /* UIView_extra.m */,
 				E8AE535D1DE29DF000E3A292 /* NoDataView.h */,
 				E8AE535E1DE29DF000E3A292 /* NoDataView.m */,
 				E8AE535F1DE29DF000E3A292 /* NoDataView.xib */,
@@ -834,7 +857,12 @@
 		E8AE549F1DE29EE100E3A292 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E8AE54FC1DE5767400E3A292 /* Menu */,
+				E8AE54FD1DE5767400E3A292 /* My */,
+				E8AE54FE1DE5767400E3A292 /* Search */,
 				E8AE54DA1DE2A49600E3A292 /* Index */,
+				E8B795DE1DE8105800E1572F /* JQNavigationController.h */,
+				E8B795DF1DE8105800E1572F /* JQNavigationController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -855,6 +883,9 @@
 				E8AE54DE1DE2A61D00E3A292 /* IndexViewController.h */,
 				E8AE54DF1DE2A61D00E3A292 /* IndexViewController.m */,
 				E8AE54E01DE2A61D00E3A292 /* IndexViewController.xib */,
+				E8B795D11DE58B7B00E1572F /* BaseIndexViewController.h */,
+				E8B795D21DE58B7B00E1572F /* BaseIndexViewController.m */,
+				E8B795D31DE58B7B00E1572F /* BaseIndexViewController.xib */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -867,6 +898,33 @@
 				E8AE54E61DE2D72A00E3A292 /* IndexItemTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E8AE54FC1DE5767400E3A292 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E8AE54FF1DE5768800E3A292 /* MenuViewController.h */,
+				E8AE55001DE5768800E3A292 /* MenuViewController.m */,
+				E8AE55011DE5768800E3A292 /* MenuViewController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E8AE54FD1DE5767400E3A292 /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		E8AE54FE1DE5767400E3A292 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E8B795E11DEC03CA00E1572F /* SearchViewController.h */,
+				E8B795E21DEC03CA00E1572F /* SearchViewController.m */,
+				E8B795E31DEC03CA00E1572F /* SearchViewController.xib */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -979,6 +1037,9 @@
 				E8AE54E81DE2D72A00E3A292 /* IndexItemTableViewCell.xib in Resources */,
 				E8AE54611DE29DF100E3A292 /* NoDataView.xib in Resources */,
 				E8AE54E21DE2A61D00E3A292 /* IndexViewController.xib in Resources */,
+				E8B795E51DEC03CA00E1572F /* SearchViewController.xib in Resources */,
+				E8AE55031DE5768800E3A292 /* MenuViewController.xib in Resources */,
+				E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */,
 				E8AE50BA1DE29BA900E3A292 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1009,6 +1070,7 @@
 				E8AE53C61DE29DF000E3A292 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				E8AE549B1DE29DF500E3A292 /* ZXLabel.m in Sources */,
 				E8AE543C1DE29DF000E3A292 /* TPKeyboardAvoidingTableView.m in Sources */,
+				E8B795D41DE58B7B00E1572F /* BaseIndexViewController.m in Sources */,
 				E8AE53CB1DE29DF000E3A292 /* NSString+MagicalDataImport.m in Sources */,
 				E8AE53621DE29DF000E3A292 /* CommonUtil+Date.m in Sources */,
 				E8AE54341DE29DF000E3A292 /* UIImage+MultiFormat.m in Sources */,
@@ -1025,6 +1087,7 @@
 				E8AE542E1DE29DF000E3A292 /* SDWebImageDownloader.m in Sources */,
 				E8AE53C11DE29DF000E3A292 /* SGFocusImageFrame.m in Sources */,
 				E8AE54291DE29DF000E3A292 /* MKAnnotationView+WebCache.m in Sources */,
+				E8B795E41DEC03CA00E1572F /* SearchViewController.m in Sources */,
 				E8AE548A1DE29DF500E3A292 /* BaseViewController.m in Sources */,
 				E8AE53E61DE29DF000E3A292 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E8AE53601DE29DF000E3A292 /* CommonUtil+Calculate.m in Sources */,
@@ -1043,6 +1106,7 @@
 				E8AE54E11DE2A61D00E3A292 /* IndexViewController.m in Sources */,
 				E8AE54991DE29DF500E3A292 /* ZXButton.m in Sources */,
 				E8AE53CD1DE29DF000E3A292 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				E8AE55021DE5768800E3A292 /* MenuViewController.m in Sources */,
 				E8AE53D61DE29DF000E3A292 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				E8AE53841DE29DF000E3A292 /* GTMBase64.m in Sources */,
 				E8AE53F21DE29DF000E3A292 /* UIView+MJExtension.m in Sources */,
@@ -1073,6 +1137,7 @@
 				E8AE542F1DE29DF000E3A292 /* SDWebImageDownloaderOperation.m in Sources */,
 				E8AE54601DE29DF100E3A292 /* NoDataView.m in Sources */,
 				E8AE53CA1DE29DF000E3A292 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
+				E8B795E01DE8105800E1572F /* JQNavigationController.m in Sources */,
 				E8AE549E1DE29DF500E3A292 /* ZXView.m in Sources */,
 				E8AE53E71DE29DF000E3A292 /* MJRefreshAutoStateFooter.m in Sources */,
 				E8AE549A1DE29DF500E3A292 /* ZXImageView.m in Sources */,
@@ -1087,6 +1152,7 @@
 				E8AE53D81DE29DF000E3A292 /* MagicalRecord+Actions.m in Sources */,
 				E8AE545E1DE29DF100E3A292 /* NSObject+YYModel.m in Sources */,
 				E8AE53CF1DE29DF000E3A292 /* NSManagedObject+MagicalRecord.m in Sources */,
+				E8B795D81DE68AA900E1572F /* UIView_extra.m in Sources */,
 				E8AE54331DE29DF000E3A292 /* UIImage+GIF.m in Sources */,
 				E8AE53D31DE29DF000E3A292 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				E8AE54391DE29DF000E3A292 /* LimitInput.m in Sources */,

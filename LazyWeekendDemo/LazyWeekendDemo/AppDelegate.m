@@ -7,11 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "IndexViewController.h"
 
 @interface AppDelegate ()
-
-@property (strong, nonatomic) IndexViewController *indexViewController;
 
 @end
 
@@ -27,13 +24,19 @@
     
     //初始化tabBarController
     self.indexViewController = [[IndexViewController alloc] initWithNibName:@"IndexViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:_indexViewController];
+    self.navigationController = [[JQNavigationController alloc] initWithRootViewController:self.indexViewController];
     
-    self.window.rootViewController = self.navigationController;
+    self.baseIndexViewController = [[BaseIndexViewController alloc] initWithNibName:@"BaseIndexViewController" bundle:nil withViewController:self.navigationController];
+    
+    self.window.rootViewController = self.baseIndexViewController;
     
     //设置Window为主窗口并显示出来
-    [self.navigationController setNavigationBarHidden:YES];
+//    [self.navigationController setNavigationBarHidden:YES];
     [self.window makeKeyAndVisible];
+    
+
+    [self.window addSubview:self.navigationController.view];
+    
     return YES;
 }
 

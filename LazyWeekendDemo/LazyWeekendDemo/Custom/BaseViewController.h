@@ -25,6 +25,7 @@
 #import "NoDataView.h"
 #import "MJRefresh.h"
 #import "YYModel.h"
+#import "UIView_extra.h"
 
 #import "CoreData+MagicalRecord.h"
 
