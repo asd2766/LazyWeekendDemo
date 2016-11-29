@@ -46,14 +46,14 @@
 
 // 显示菜单栏
 - (void)showMenu {
-    NSLog(@"菜单栏被点击啦");
+//    NSLog(@"菜单栏被点击啦");
     
     [self.appDelegate.baseIndexViewController showMenu];
 }
 
 // 显示搜索页面
 - (void)showSearch {
-    NSLog(@"搜索被点击啦");
+//    NSLog(@"搜索被点击啦");
     [self.appDelegate.baseIndexViewController showSearch];
 }
 @end

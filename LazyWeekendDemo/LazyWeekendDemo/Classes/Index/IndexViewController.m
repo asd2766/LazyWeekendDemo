@@ -19,12 +19,9 @@
 @property (strong, nonatomic) UILabel *headerLabel;
 @property (strong, nonatomic) UIImageView *headerImageView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewTopConstaint;
-
 //参数
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @property (strong, nonatomic) NSMutableArray *headerDescArray;// 顶部描述文字
-
 @end
 
 @implementation IndexViewController
@@ -47,7 +44,6 @@
     
     // 设置右边按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_nav_search"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(showSearch)];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,10 +117,10 @@
         
         // 计算位置
         CGSize size = [CommonUtil sizeWithString:str fontSize:13 sizewidth:MAXFLOAT sizeheight:MAXFLOAT];
-        CGFloat maxWidth = size.width + 10 + 35; // 10: 图片与文字之间间隔  35： 图片宽度
+        CGFloat maxWidth = size.width + 10 + 20; // 10: 图片与文字之间间隔  35： 图片宽度
         CGFloat x = ceil((_screenWidth - maxWidth)/2);
-        self.headerImageView.frame = CGRectMake(x, ceil((60-35)/2), 35, 35);
-        self.headerLabel.frame = CGRectMake(CGRectGetMaxX(self.headerImageView.frame) + 10, CGRectGetMinY(self.headerImageView.frame), size.width, 35);
+        self.headerImageView.frame = CGRectMake(x, ceil((60-35)/2), 20, 20);
+        self.headerLabel.frame = CGRectMake(CGRectGetMaxX(self.headerImageView.frame) + 10, CGRectGetMinY(self.headerImageView.frame), size.width, 20);
     }
 }
 

@@ -33,9 +33,12 @@
     //设置Window为主窗口并显示出来
 //    [self.navigationController setNavigationBarHidden:YES];
     [self.window makeKeyAndVisible];
-    
 
     [self.window addSubview:self.navigationController.view];
+
+    // 设置 statusBar 颜色
+//    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+//    statusBar.backgroundColor = [UIColor grayColor];
     
     return YES;
 }

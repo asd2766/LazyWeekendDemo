@@ -3,6 +3,12 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[MenuViewController initWithNibName:bundle:withViewController:]:MenuViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MenuViewController viewDidLoad]:MenuViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[JQPaddingLabel initWithCoder:]:JQPaddingLabel.m">
          <PersistentStrings>
             <PersistentString
@@ -15,6 +21,17 @@
          <PersistentStrings>
             <PersistentString
                value = "self.dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__48-[BaseIndexViewController openMenuWithDuration:]_block_invoke:BaseIndexViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BaseIndexViewController openMenuWithDuration:withView:]:BaseIndexViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

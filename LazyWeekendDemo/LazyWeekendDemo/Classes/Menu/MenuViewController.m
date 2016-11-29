@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "AppDelegate.h"
+#import "ChangeMsgViewController.h"
 
 @interface MenuViewController () {
     CGFloat menuHeight;
@@ -29,13 +30,32 @@
     self.dataArray = [NSArray arrayWithObjects:@"首页", @"修改个人资料", @"选择我的兴趣标签", @"查看我的预订",
                       @"收藏的活动", @"设置", nil];
     
-//    [self.mainTableView reloadData];
+
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self handleSelectIndex];
+//    [self.mainTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 其他方法
+
+- (void)handleSelectIndex {
+    UIViewController *topVC = self.navigationController.topViewController;
+    
+    if ([topVC isKindOfClass:[IndexViewController class]]) {
+        self.selectIndex = 0;
+    } else if ([topVC isKindOfClass:[ChangeMsgViewController class]]) {
+        self.selectIndex = 1;
+    }
+    
 }
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
@@ -84,7 +104,32 @@
 //设置cell选择方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"哎呦喂，我被点击啦， %@", self.navigationController);
+    
+    if ([self.parentViewController isKindOfClass:[BaseIndexViewController class]]) {
+        BaseIndexViewController *viewController = (BaseIndexViewController *)self.parentViewController;
+        [viewController showMenu];
+    }
+    
+    switch (indexPath.row) {
+        case 0: {
+            // 首页
+            
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            break;
+        }
+        case 1: {
+            // 修改个人资料
+            ChangeMsgViewController *nextController = [[ChangeMsgViewController alloc] initWithNibName:@"ChangeMsgViewController" bundle:nil];
+            [self.navigationController pushViewController:nextController animated:NO];
+            break;
+        }
+            
+        default:
+            break;
+    }
+    
+    _selectIndex = indexPath.row;
+    [self.mainTableView reloadData];
     
 }
 

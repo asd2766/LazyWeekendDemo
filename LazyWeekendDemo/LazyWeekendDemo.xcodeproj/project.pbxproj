@@ -120,6 +120,8 @@
 		E8B795E01DE8105800E1572F /* JQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795DF1DE8105800E1572F /* JQNavigationController.m */; };
 		E8B795E41DEC03CA00E1572F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795E21DEC03CA00E1572F /* SearchViewController.m */; };
 		E8B795E51DEC03CA00E1572F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B795E31DEC03CA00E1572F /* SearchViewController.xib */; };
+		E8B795E91DED26C900E1572F /* ChangeMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B795E71DED26C900E1572F /* ChangeMsgViewController.m */; };
+		E8B795EA1DED26C900E1572F /* ChangeMsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B795E81DED26C900E1572F /* ChangeMsgViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,6 +371,9 @@
 		E8B795E11DEC03CA00E1572F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		E8B795E21DEC03CA00E1572F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		E8B795E31DEC03CA00E1572F /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		E8B795E61DED26C900E1572F /* ChangeMsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeMsgViewController.h; sourceTree = "<group>"; };
+		E8B795E71DED26C900E1572F /* ChangeMsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeMsgViewController.m; sourceTree = "<group>"; };
+		E8B795E81DED26C900E1572F /* ChangeMsgViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeMsgViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -913,6 +918,9 @@
 		E8AE54FD1DE5767400E3A292 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				E8B795E61DED26C900E1572F /* ChangeMsgViewController.h */,
+				E8B795E71DED26C900E1572F /* ChangeMsgViewController.m */,
+				E8B795E81DED26C900E1572F /* ChangeMsgViewController.xib */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1038,6 +1046,7 @@
 				E8AE54611DE29DF100E3A292 /* NoDataView.xib in Resources */,
 				E8AE54E21DE2A61D00E3A292 /* IndexViewController.xib in Resources */,
 				E8B795E51DEC03CA00E1572F /* SearchViewController.xib in Resources */,
+				E8B795EA1DED26C900E1572F /* ChangeMsgViewController.xib in Resources */,
 				E8AE55031DE5768800E3A292 /* MenuViewController.xib in Resources */,
 				E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */,
 				E8AE50BA1DE29BA900E3A292 /* Assets.xcassets in Resources */,
@@ -1163,6 +1172,7 @@
 				E8AE53ED1DE29DF000E3A292 /* MJRefreshStateHeader.m in Sources */,
 				E8AE53CE1DE29DF000E3A292 /* NSManagedObject+MagicalFinders.m in Sources */,
 				E8AE53631DE29DF000E3A292 /* CommonUtil+Files.m in Sources */,
+				E8B795E91DED26C900E1572F /* ChangeMsgViewController.m in Sources */,
 				E8AE545F1DE29DF100E3A292 /* YYClassInfo.m in Sources */,
 				E8AE53D91DE29DF000E3A292 /* MagicalRecord+ErrorHandling.m in Sources */,
 				E8AE54E71DE2D72A00E3A292 /* IndexItemTableViewCell.m in Sources */,

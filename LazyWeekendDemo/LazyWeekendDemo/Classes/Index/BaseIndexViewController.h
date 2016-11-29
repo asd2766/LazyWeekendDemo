@@ -6,10 +6,11 @@
 //  Copyright © 2016年 吴筠秋. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface BaseIndexViewController : BaseViewController
+@interface BaseIndexViewController : UIViewController
 
+@property (strong, nonatomic) UINavigationController *navigationController;
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
              withViewController:(UIViewController *)viewController;
