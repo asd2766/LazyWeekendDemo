@@ -10,7 +10,9 @@
 
 @interface SearchViewController : BaseViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+
+@property (assign, nonatomic) NSInteger selectIndex;
 
 @property (strong, nonatomic) UINavigationController *navigationController;
 

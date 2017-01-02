@@ -44,6 +44,8 @@
     
     // 设置右边按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_nav_search"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(showSearch)];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSearch:) name:@"handleSearch" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,6 +107,64 @@
     _headerLabel.textColor = RGB(130, 130, 130);
     [headerView addSubview:_headerLabel];
     
+}
+
+/**
+ *  处理搜索页面传递回来的值
+ *
+ *  @param notification 通知
+ */
+- (void)handleSearch:(NSNotification *)notification {
+    NSString *keywords = notification.object;
+    
+    if ([@"全部类目" isEqualToString:keywords]) {
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             @"日本奇幻动漫游学之旅 | 【名侦探柯南】会告诉你“真想只有一个！”", @"title",
+                             @"http://www.khvip.com/files/2015-6/20150613150254184155.jpg", @"imageUrl",
+                             @"东京・369km・户外活动", @"location",
+                             @"2017年2月1日~2017年2月8日", @"time",
+                             @"25", @"collectionNum", @"19200", @"price",
+                             nil];
+        [self.dataArray addObject:dic];
+        
+        dic = [NSDictionary dictionaryWithObjectsAndKeys:
+               @"相约西藏，一起过不一样的新年-----西藏“风情”之旅", @"title",
+               @"http://www.cdtianya.com/Public/Uploads/image/20150416/20150416173303_51276.jpg", @"imageUrl",
+               @"西藏・369km・户外活动", @"location",
+               @"2017年1月28日~2017年2月3日", @"time",
+               @"266", @"collectionNum", @"3680", @"price",
+               nil];
+        [self.dataArray addObject:dic];
+        
+        dic = [NSDictionary dictionaryWithObjectsAndKeys:
+               @"冬天去海南：用18中方式，在海南的冬天里任性过夏天", @"title",
+               @"http://www.youbian.com/Images/Articles/2016-03-09/3668457683.jpg", @"imageUrl",
+               @"海南・369km・户外活动", @"location",
+               @"本周六 8:30", @"time",
+               @"51", @"collectionNum", @"2880", @"price",
+               nil];
+        [self.dataArray addObject:dic];
+        
+    } else if ([@"户外活动" isEqualToString:keywords]) {
+        
+    } else if ([@"暂不开放" isEqualToString:keywords]) {
+        
+    } else if ([@"DIY手作" isEqualToString:keywords]) {
+        
+    } else if ([@"派对聚会" isEqualToString:keywords]) {
+        
+    } else if ([@"运动健身" isEqualToString:keywords]) {
+        
+    } else if ([@"文艺生活" isEqualToString:keywords]) {
+        
+    } else if ([@"沙龙学堂" isEqualToString:keywords]) {
+        
+    } else if ([@"茶会雅集" isEqualToString:keywords]) {
+        
+    }
+    
+    [self.mainTableView reloadData];
 }
 
 #pragma mark - UIScrollViewDelegate

@@ -35,7 +35,7 @@
     
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: RGB(68, 68, 68)}]; //标题颜色
     
-    self.appDelegate = [UIApplication sharedApplication].delegate;
+    self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //    self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil withViewController:self];
 }
 

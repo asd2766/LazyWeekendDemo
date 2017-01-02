@@ -121,7 +121,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
             view = self.menuVC.mainTableView;
         } else {
             // 搜索页面
-            view = self.searchVC.testLabel;
+            view = self.searchVC.mainView;
         }
         [self closeWithView:view];
         
@@ -137,7 +137,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
         view = self.menuVC.mainTableView;
     } else {
         // 搜索页面
-        view = self.searchVC.testLabel;
+        view = self.searchVC.mainView;
     }
     [self closeWithView:view];
 }
@@ -151,7 +151,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
         self.menuVC.mainTableView.transform = CGAffineTransformScale(transf, newTransformValue, newTransformValue);
     } else {
         // 搜索页面
-        self.searchVC.testLabel.transform = CGAffineTransformScale(transf, newTransformValue, newTransformValue);
+        self.searchVC.mainView.transform = CGAffineTransformScale(transf, newTransformValue, newTransformValue);
     }
 }
 
@@ -173,9 +173,9 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
     
     if (self.state == Closed) {
         [self transitionFromOldViewController:_currentVC toNewViewController:self.searchVC];
-        [self openWithView:self.searchVC.testLabel];
+        [self openWithView:self.searchVC.mainView];
     }else {
-        [self closeWithView:self.searchVC.testLabel];
+        [self closeWithView:self.searchVC.mainView];
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */; };
+		E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */; };
 		E8AE50AF1DE29BA900E3A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50AE1DE29BA900E3A292 /* main.m */; };
 		E8AE50B21DE29BA900E3A292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50B11DE29BA900E3A292 /* AppDelegate.m */; };
 		E8AE50BA1DE29BA900E3A292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8AE50B91DE29BA900E3A292 /* Assets.xcassets */; };
@@ -142,6 +144,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
+		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
+		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		E8AE50AA1DE29BA900E3A292 /* LazyWeekendDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyWeekendDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8AE50AE1DE29BA900E3A292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8AE50B01DE29BA900E3A292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -401,6 +406,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E89AE05F1DF113DC0013C38D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */,
+				E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */,
+				E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E8AE50A11DE29BA900E3A292 = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +943,7 @@
 		E8AE54FE1DE5767400E3A292 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				E89AE05F1DF113DC0013C38D /* Cell */,
 				E8B795E11DEC03CA00E1572F /* SearchViewController.h */,
 				E8B795E21DEC03CA00E1572F /* SearchViewController.m */,
 				E8B795E31DEC03CA00E1572F /* SearchViewController.xib */,
@@ -1047,6 +1063,7 @@
 				E8AE54E21DE2A61D00E3A292 /* IndexViewController.xib in Resources */,
 				E8B795E51DEC03CA00E1572F /* SearchViewController.xib in Resources */,
 				E8B795EA1DED26C900E1572F /* ChangeMsgViewController.xib in Resources */,
+				E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */,
 				E8AE55031DE5768800E3A292 /* MenuViewController.xib in Resources */,
 				E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */,
 				E8AE50BA1DE29BA900E3A292 /* Assets.xcassets in Resources */,
@@ -1135,6 +1152,7 @@
 				E8AE53E21DE29DF000E3A292 /* MJRefreshComponent.m in Sources */,
 				E8AE53E91DE29DF000E3A292 /* MJRefreshBackNormalFooter.m in Sources */,
 				E8AE53F11DE29DF000E3A292 /* UIScrollView+MJRefresh.m in Sources */,
+				E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */,
 				E8AE54301DE29DF000E3A292 /* SDWebImageManager.m in Sources */,
 				E8AE53C21DE29DF000E3A292 /* SGFocusImageItem.m in Sources */,
 				E8AE54321DE29DF000E3A292 /* UIButton+WebCache.m in Sources */,
