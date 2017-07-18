@@ -22,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    //初始化tabBarController
+    //初始化navigationController
     self.indexViewController = [[IndexViewController alloc] initWithNibName:@"IndexViewController" bundle:nil];
     self.navigationController = [[JQNavigationController alloc] initWithRootViewController:self.indexViewController];
     

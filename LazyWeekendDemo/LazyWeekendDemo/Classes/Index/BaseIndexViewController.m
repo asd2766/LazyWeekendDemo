@@ -94,15 +94,17 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
     
     if (gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateChanged) {
         
+        viewCenter.y = fabs(viewCenter.y + translation.y);
+        self.contentViewController.view.center = viewCenter;
         if (viewCenter.y >= _screenHeight/2 && viewCenter.y <= _screenHeight/2 + menuHeight) {
             // 拖动的距离在展开菜单栏的高度范围内
-            viewCenter.y = fabs(viewCenter.y + translation.y);
+//            viewCenter.y = fabs(viewCenter.y + translation.y);
             
             if (viewCenter.y >= _screenHeight/2 && viewCenter.y <= _screenHeight/2 + menuHeight) {
                 
-                self.contentViewController.view.center = viewCenter;
+//                self.contentViewController.view.center = viewCenter;
                 
-                // 百分比
+                // 缩放百分比
                 CGFloat transformPercentage = 1 - fabs((CGRectGetMinY(self.contentViewController.view.frame) / menuHeight));
                 [self transformAtPercentage:transformPercentage];
                 [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
@@ -123,8 +125,18 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
             // 搜索页面
             view = self.searchVC.mainView;
         }
-        [self closeWithView:view];
         
+        // 如果拖动范围高于展开区域, 关闭菜单栏
+        if (viewCenter.y <= _screenHeight/2 + menuHeight) {
+            [self closeWithView:view];
+        } else {
+            // 回到展开区域内
+            viewCenter.y = _screenHeight/2 + menuHeight;
+            [UIView animateWithDuration:0.3f animations:^{
+                self.contentViewController.view.center = viewCenter;
+            }];
+
+        }
     }
     
 }
