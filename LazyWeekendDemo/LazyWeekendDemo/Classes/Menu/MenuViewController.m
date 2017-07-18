@@ -36,8 +36,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self handleSelectIndex];
-//    [self.mainTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +53,7 @@
     } else if ([topVC isKindOfClass:[ChangeMsgViewController class]]) {
         self.selectIndex = 1;
     }
+    [self.mainTableView reloadData];
     
 }
 

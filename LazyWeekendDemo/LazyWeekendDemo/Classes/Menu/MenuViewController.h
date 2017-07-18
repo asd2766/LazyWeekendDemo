@@ -16,4 +16,5 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
+- (void)handleSelectIndex;
 @end

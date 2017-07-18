@@ -163,6 +163,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
     if (self.state == Closed) {
         [self transitionFromOldViewController:_currentVC toNewViewController:self.menuVC];
         [self openWithView:self.menuVC.mainTableView];
+        [self.menuVC handleSelectIndex];
     }else {
         [self closeWithView:self.menuVC.mainTableView];
     }
