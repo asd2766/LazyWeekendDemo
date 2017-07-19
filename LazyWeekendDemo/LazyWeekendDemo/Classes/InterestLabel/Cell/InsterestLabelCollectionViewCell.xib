@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGm-iG-HI6">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="116"/>
+                        <rect key="frame" x="10" y="10" width="140" height="106"/>
                     </imageView>
                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVc-Ws-5q6">
                         <rect key="frame" x="0.0" y="116" width="160" height="44"/>
@@ -38,10 +38,10 @@
             <constraints>
                 <constraint firstItem="GVc-Ws-5q6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HbQ-fY-TYJ"/>
                 <constraint firstAttribute="trailing" secondItem="GVc-Ws-5q6" secondAttribute="trailing" id="Pkv-Aq-NSG"/>
-                <constraint firstItem="wGm-iG-HI6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d6y-z2-vDc"/>
+                <constraint firstItem="wGm-iG-HI6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="d6y-z2-vDc"/>
                 <constraint firstAttribute="bottom" secondItem="GVc-Ws-5q6" secondAttribute="bottom" id="rzs-Xe-3oP"/>
-                <constraint firstAttribute="trailing" secondItem="wGm-iG-HI6" secondAttribute="trailing" id="tVs-is-UZM"/>
-                <constraint firstItem="wGm-iG-HI6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xt6-hY-fd0"/>
+                <constraint firstAttribute="trailing" secondItem="wGm-iG-HI6" secondAttribute="trailing" constant="10" id="tVs-is-UZM"/>
+                <constraint firstItem="wGm-iG-HI6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="xt6-hY-fd0"/>
                 <constraint firstItem="GVc-Ws-5q6" firstAttribute="top" secondItem="wGm-iG-HI6" secondAttribute="bottom" id="zCs-c2-2dS"/>
             </constraints>
             <connections>
