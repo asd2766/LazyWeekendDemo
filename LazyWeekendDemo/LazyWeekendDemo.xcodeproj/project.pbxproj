@@ -13,6 +13,8 @@
 		B86888741F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */; };
 		B86888781F1F3B1600330B45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86888771F1F3B1600330B45 /* CoreData.framework */; };
 		B868887B1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B86888791F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld */; };
+		B86888891F1F3EC100330B45 /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B86888861F1F3EC100330B45 /* User+CoreDataClass.m */; };
+		B868888A1F1F3EC100330B45 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B86888881F1F3EC100330B45 /* User+CoreDataProperties.m */; };
 		E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */; };
 		E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */; };
 		E8AE50AF1DE29BA900E3A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50AE1DE29BA900E3A292 /* main.m */; };
@@ -158,6 +160,10 @@
 		B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelCollectionViewCell.xib; sourceTree = "<group>"; };
 		B86888771F1F3B1600330B45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B868887A1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyWeekendDatabase.xcdatamodel; sourceTree = "<group>"; };
+		B86888851F1F3EC100330B45 /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
+		B86888861F1F3EC100330B45 /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
+		B86888871F1F3EC100330B45 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B86888881F1F3EC100330B45 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -466,6 +472,10 @@
 		B86888751F1F3A8E00330B45 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				B86888851F1F3EC100330B45 /* User+CoreDataClass.h */,
+				B86888861F1F3EC100330B45 /* User+CoreDataClass.m */,
+				B86888871F1F3EC100330B45 /* User+CoreDataProperties.h */,
+				B86888881F1F3EC100330B45 /* User+CoreDataProperties.m */,
 				B86888791F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld */,
 			);
 			path = Database;
@@ -1178,6 +1188,7 @@
 				E8AE549B1DE29DF500E3A292 /* ZXLabel.m in Sources */,
 				E8AE543C1DE29DF000E3A292 /* TPKeyboardAvoidingTableView.m in Sources */,
 				E8B795D41DE58B7B00E1572F /* BaseIndexViewController.m in Sources */,
+				B86888891F1F3EC100330B45 /* User+CoreDataClass.m in Sources */,
 				E8AE53CB1DE29DF000E3A292 /* NSString+MagicalDataImport.m in Sources */,
 				E8AE53621DE29DF000E3A292 /* CommonUtil+Date.m in Sources */,
 				E8AE54341DE29DF000E3A292 /* UIImage+MultiFormat.m in Sources */,
@@ -1259,6 +1270,7 @@
 				E8AE54381DE29DF000E3A292 /* UIView+WebCacheOperation.m in Sources */,
 				E8AE543B1DE29DF000E3A292 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				E8AE542B1DE29DF000E3A292 /* SDImageCache.m in Sources */,
+				B868888A1F1F3EC100330B45 /* User+CoreDataProperties.m in Sources */,
 				E8AE53D81DE29DF000E3A292 /* MagicalRecord+Actions.m in Sources */,
 				E8AE545E1DE29DF100E3A292 /* NSObject+YYModel.m in Sources */,
 				E8AE53CF1DE29DF000E3A292 /* NSManagedObject+MagicalRecord.m in Sources */,
