@@ -11,6 +11,8 @@
 		B868886E1F1EEFC600330B45 /* InsterestLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */; };
 		B86888731F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */; };
 		B86888741F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */; };
+		B86888781F1F3B1600330B45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86888771F1F3B1600330B45 /* CoreData.framework */; };
+		B868887B1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B86888791F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld */; };
 		E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */; };
 		E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */; };
 		E8AE50AF1DE29BA900E3A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50AE1DE29BA900E3A292 /* main.m */; };
@@ -154,6 +156,8 @@
 		B86888701F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterestLabelCollectionViewCell.h; sourceTree = "<group>"; };
 		B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterestLabelCollectionViewCell.m; sourceTree = "<group>"; };
 		B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelCollectionViewCell.xib; sourceTree = "<group>"; };
+		B86888771F1F3B1600330B45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B868887A1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyWeekendDatabase.xcdatamodel; sourceTree = "<group>"; };
 		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86888781F1F3B1600330B45 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +466,17 @@
 		B86888751F1F3A8E00330B45 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				B86888791F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		B86888761F1F3B1500330B45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B86888771F1F3B1600330B45 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E89AE05F1DF113DC0013C38D /* Cell */ = {
@@ -482,6 +496,7 @@
 				E8AE50C61DE29BA900E3A292 /* LazyWeekendDemoTests */,
 				E8AE50D11DE29BA900E3A292 /* LazyWeekendDemoUITests */,
 				E8AE50AB1DE29BA900E3A292 /* Products */,
+				B86888761F1F3B1500330B45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1222,6 +1237,7 @@
 				E8AE54301DE29DF000E3A292 /* SDWebImageManager.m in Sources */,
 				B86888731F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m in Sources */,
 				E8AE53C21DE29DF000E3A292 /* SGFocusImageItem.m in Sources */,
+				B868887B1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld in Sources */,
 				E8AE54321DE29DF000E3A292 /* UIButton+WebCache.m in Sources */,
 				E8AE53EF1DE29DF000E3A292 /* MJRefreshConst.m in Sources */,
 				E8AE53F01DE29DF000E3A292 /* UIScrollView+MJExtension.m in Sources */,
@@ -1532,6 +1548,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B86888791F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B868887A1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodel */,
+			);
+			currentVersion = B868887A1F1F3B5800330B45 /* LazyWeekendDatabase.xcdatamodel */;
+			path = LazyWeekendDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E8AE50A21DE29BA900E3A292 /* Project object */;
 }
