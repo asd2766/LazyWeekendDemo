@@ -20,14 +20,13 @@
 #import "CommonUtil+Calculate.h"
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
-#import "CoreData+MagicalRecord.h"
 #import "MBProgressHUD.h"
 #import "NoDataView.h"
 #import "MJRefresh.h"
 #import "YYModel.h"
 #import "UIView_extra.h"
 
-#import "CoreData+MagicalRecord.h"
+#import "MagicalRecord.h"
 
 typedef NS_ENUM(NSInteger, NormalAlertType) {
     NormalAlertWrongType,   //错误提示框
