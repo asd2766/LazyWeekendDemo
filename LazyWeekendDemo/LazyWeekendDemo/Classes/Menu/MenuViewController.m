@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "AppDelegate.h"
 #import "ChangeMsgViewController.h"
+#import "InsterestLabelViewController.h" // 选择我的兴趣页面
 
 @interface MenuViewController () {
     CGFloat menuHeight;
@@ -52,6 +53,8 @@
         self.selectIndex = 0;
     } else if ([topVC isKindOfClass:[ChangeMsgViewController class]]) {
         self.selectIndex = 1;
+    } else if ([topVC isKindOfClass:[InsterestLabelViewController class]]) {
+        self.selectIndex = 2;
     }
     [self.mainTableView reloadData];
     
@@ -119,6 +122,12 @@
         case 1: {
             // 修改个人资料
             ChangeMsgViewController *nextController = [[ChangeMsgViewController alloc] initWithNibName:@"ChangeMsgViewController" bundle:nil];
+            [self.navigationController pushViewController:nextController animated:NO];
+            break;
+        }
+        case 2: {
+            // 选择我的兴趣页面
+            InsterestLabelViewController *nextController = [[InsterestLabelViewController alloc] initWithNibName:@"InsterestLabelViewController" bundle:nil];
             [self.navigationController pushViewController:nextController animated:NO];
             break;
         }

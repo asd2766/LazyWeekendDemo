@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B868886D1F1EEFC600330B45 /* InsterestLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */; };
+		B868886E1F1EEFC600330B45 /* InsterestLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */; };
+		B86888731F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */; };
+		B86888741F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */; };
 		E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */; };
 		E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */; };
 		E8AE50AF1DE29BA900E3A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50AE1DE29BA900E3A292 /* main.m */; };
@@ -144,6 +148,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B868886A1F1EEFC600330B45 /* InsterestLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterestLabelViewController.h; sourceTree = "<group>"; };
+		B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterestLabelViewController.m; sourceTree = "<group>"; };
+		B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelViewController.xib; sourceTree = "<group>"; };
+		B86888701F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterestLabelCollectionViewCell.h; sourceTree = "<group>"; };
+		B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterestLabelCollectionViewCell.m; sourceTree = "<group>"; };
+		B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelCollectionViewCell.xib; sourceTree = "<group>"; };
 		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -406,6 +416,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B86888661F1EEF8800330B45 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		B86888671F1EEF8F00330B45 /* Mybooking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mybooking;
+			sourceTree = "<group>";
+		};
+		B86888681F1EEF9D00330B45 /* CollectActivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectActivity;
+			sourceTree = "<group>";
+		};
+		B86888691F1EEFA300330B45 /* InterestLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B868886F1F1EF3BF00330B45 /* Cell */,
+				B868886A1F1EEFC600330B45 /* InsterestLabelViewController.h */,
+				B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */,
+				B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */,
+			);
+			path = InterestLabel;
+			sourceTree = "<group>";
+		};
+		B868886F1F1EF3BF00330B45 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B86888701F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.h */,
+				B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */,
+				B86888721F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E89AE05F1DF113DC0013C38D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +929,10 @@
 		E8AE549F1DE29EE100E3A292 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B86888691F1EEFA300330B45 /* InterestLabel */,
+				B86888681F1EEF9D00330B45 /* CollectActivity */,
+				B86888671F1EEF8F00330B45 /* Mybooking */,
+				B86888661F1EEF8800330B45 /* Setting */,
 				E8AE54FC1DE5767400E3A292 /* Menu */,
 				E8AE54FD1DE5767400E3A292 /* My */,
 				E8AE54FE1DE5767400E3A292 /* Search */,
@@ -1058,6 +1114,7 @@
 			files = (
 				E8AE53C41DE29DF000E3A292 /* TopicItem.xib in Resources */,
 				E8AE53EE1DE29DF000E3A292 /* MJRefresh.bundle in Resources */,
+				B868886E1F1EEFC600330B45 /* InsterestLabelViewController.xib in Resources */,
 				E8AE54E81DE2D72A00E3A292 /* IndexItemTableViewCell.xib in Resources */,
 				E8AE54611DE29DF100E3A292 /* NoDataView.xib in Resources */,
 				E8AE54E21DE2A61D00E3A292 /* IndexViewController.xib in Resources */,
@@ -1065,6 +1122,7 @@
 				E8B795EA1DED26C900E1572F /* ChangeMsgViewController.xib in Resources */,
 				E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */,
 				E8AE55031DE5768800E3A292 /* MenuViewController.xib in Resources */,
+				B86888741F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib in Resources */,
 				E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */,
 				E8AE50BA1DE29BA900E3A292 /* Assets.xcassets in Resources */,
 			);
@@ -1154,6 +1212,7 @@
 				E8AE53F11DE29DF000E3A292 /* UIScrollView+MJRefresh.m in Sources */,
 				E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */,
 				E8AE54301DE29DF000E3A292 /* SDWebImageManager.m in Sources */,
+				B86888731F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m in Sources */,
 				E8AE53C21DE29DF000E3A292 /* SGFocusImageItem.m in Sources */,
 				E8AE54321DE29DF000E3A292 /* UIButton+WebCache.m in Sources */,
 				E8AE53EF1DE29DF000E3A292 /* MJRefreshConst.m in Sources */,
@@ -1187,6 +1246,7 @@
 				E8AE54FB1DE5390C00E3A292 /* JQPaddingLabel.m in Sources */,
 				E8AE53E51DE29DF000E3A292 /* MJRefreshAutoGifFooter.m in Sources */,
 				E8AE53E41DE29DF000E3A292 /* MJRefreshHeader.m in Sources */,
+				B868886D1F1EEFC600330B45 /* InsterestLabelViewController.m in Sources */,
 				E8AE53ED1DE29DF000E3A292 /* MJRefreshStateHeader.m in Sources */,
 				E8AE53CE1DE29DF000E3A292 /* NSManagedObject+MagicalFinders.m in Sources */,
 				E8AE53631DE29DF000E3A292 /* CommonUtil+Files.m in Sources */,
