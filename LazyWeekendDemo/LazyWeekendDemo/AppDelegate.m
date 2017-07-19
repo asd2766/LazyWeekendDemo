@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -41,6 +42,9 @@
 //    statusBar.backgroundColor = [UIColor grayColor];
     
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    // 注册通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToLogin) name:@"needlogin" object:nil];
     return YES;
 }
 
@@ -65,6 +69,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [MagicalRecord cleanUp];
+}
+
+#pragma mark -- private
+- (void)jumpToLogin {
+    LoginViewController *nextController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [self.navigationController pushViewController:nextController animated:YES];
 }
 
 @end

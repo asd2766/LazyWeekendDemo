@@ -23,5 +23,8 @@
 @property (strong, nonatomic) SearchViewController *searchViewController;
 @property (strong, nonatomic) BaseIndexViewController *baseIndexViewController;
 
+// 参数
+@property (strong, nonatomic) NSString *userId; // 用户id 用来判断是否登录
+
 @end
 

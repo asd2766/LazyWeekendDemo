@@ -447,18 +447,14 @@ static CommonUtil *defaultUtil = nil;
  */
 - (BOOL)isLogin:(BOOL)needLogin {
     BOOL isLogin = NO;
-//    if (![CommonUtil isEmpty:appDelegate.userId]) {
-//        isLogin = YES;
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            //清除需要自动进入下一页的信息
-//            [CommonUtil deleteObjectFromUD:@"loginParam"];
-//        });
-//    } else {
-//        //需要进行登录
-//        if (needLogin) {
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"needlogin" object:nil];
-//        }
-//    }
+    if (![CommonUtil isEmpty:appDelegate.userId]) {
+        isLogin = YES;
+    } else {
+        //需要进行登录
+        if (needLogin) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"needlogin" object:nil];
+        }
+    }
     
     return isLogin;
 }
