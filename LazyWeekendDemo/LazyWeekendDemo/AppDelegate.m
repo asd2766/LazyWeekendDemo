@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 
+// model
+#import "UserData+CoreDataClass.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 注册 MagicalRecord
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    // 自动登录
+    [self autoLogin];
     
     //OC需要添加的代码
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -40,11 +49,11 @@
     // 设置 statusBar 颜色
 //    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
 //    statusBar.backgroundColor = [UIColor grayColor];
-    
-    [MagicalRecord setupAutoMigratingCoreDataStack];
+
     
     // 注册通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToLogin) name:@"needlogin" object:nil];
+    
     return YES;
 }
 
@@ -75,6 +84,24 @@
 - (void)jumpToLogin {
     LoginViewController *nextController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.navigationController pushViewController:nextController animated:NO];
+}
+
+
+/**
+ 自动登录
+ */
+- (void)autoLogin {
+    NSString *phone = [CommonUtil getObjectFromUD:@"loginName"];
+    NSString *pwd = [CommonUtil getObjectFromUD:@"loginPwd"];
+    if ([CommonUtil isEmpty:phone] || [CommonUtil isEmpty:pwd]) {
+        return;
+    }
+    
+    UserData *user = [UserData MR_findFirstByAttribute:@"phone" withValue:phone];
+    if (user && [user.password isEqualToString:pwd]) {
+        // 用户名密码正确, 登录成功
+        self.userId = user.id;
+    }
 }
 
 @end

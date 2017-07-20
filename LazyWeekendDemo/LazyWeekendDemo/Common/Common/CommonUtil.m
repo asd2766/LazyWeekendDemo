@@ -488,21 +488,6 @@ static CommonUtil *defaultUtil = nil;
 }
 
 /**
- *  获取用户的custId
- *
- *  @return custId
- */
-- (NSString *)getUserCustId {
-//    UserInfo *info = [[UserInfo alloc] initWithDict:[CommonUtil getObjectFromUD:@"userInfo"]];
-//    
-//    if (info) {
-//        return info.custId;
-//    }
-//    
-    return nil;
-}
-
-/**
  *  去除emoji表情
  *
  *  @param text 内容

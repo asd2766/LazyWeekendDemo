@@ -3,12 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[RegistViewController clickForRegist:]:RegistViewController.m">
+         contextName = "-[InsterestLabelViewController viewDidLoad]:InsterestLabelViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "delegate.userId">
+               value = "self.dataArray">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController clickForLogin:]:LoginViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[InsterestLabelViewController collectionView:didSelectItemAtIndexPath:]:InsterestLabelViewController.m">
@@ -19,12 +22,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[InsterestLabelViewController viewDidLoad]:InsterestLabelViewController.m">
+         contextName = "-[RegistViewController clickForRegist:]:RegistViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.dataArray">
+               value = "delegate.userId">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InsterestLabelViewController clickForSave]:InsterestLabelViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

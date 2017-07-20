@@ -102,6 +102,8 @@
     // 注册成功, 跳转到登录页面
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.userId = user.id;
+    [CommonUtil saveObjectToUD:@"loginName" key:phone];
+    [CommonUtil saveObjectToUD:@"loginPwd" key:[CommonUtil md5:pwd]];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

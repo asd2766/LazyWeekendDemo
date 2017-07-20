@@ -152,6 +152,8 @@
             // 退出登录
             AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             delegate.userId = @"";
+            [CommonUtil deleteObjectFromUD:@"loginName"];
+            [CommonUtil deleteObjectFromUD:@"loginPwd"];
             [[CommonUtil currentUtil] isLogin];
             break;
         }

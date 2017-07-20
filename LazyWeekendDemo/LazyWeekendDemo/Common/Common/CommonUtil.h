@@ -143,13 +143,6 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
 - (NSString *)getLoginUserid;
 
 /**
- *  获取用户的custId
- *
- *  @return custId
- */
-- (NSString *)getUserCustId;
-
-/**
  *  去除emoji表情
  *
  *  @param text 内容

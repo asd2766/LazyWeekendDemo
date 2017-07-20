@@ -78,6 +78,8 @@
     // 用户名,密码正确, 成功登录, 保存登录的用户信息
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.userId = user.id;
+    [CommonUtil saveObjectToUD:phone key:@"loginName"];
+    [CommonUtil saveObjectToUD:[CommonUtil md5:pwd] key:@"loginPwd"];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
