@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1510" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="InterestLabel" representedClassName="InterestLabel" syncable="YES" codeGenerationType="class">
+        <attribute name="labelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="UserData" representedClassName="UserData" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickName" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,5 +15,6 @@
     </entity>
     <elements>
         <element name="UserData" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="InterestLabel" positionX="-54" positionY="36" width="128" height="90"/>
     </elements>
 </model>

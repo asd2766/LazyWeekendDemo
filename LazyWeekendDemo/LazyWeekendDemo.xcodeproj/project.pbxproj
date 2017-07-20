@@ -232,6 +232,10 @@
 		B876486A1F1F5F0E0028AE1A /* UserData+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserData+CoreDataClass.m"; sourceTree = "<group>"; };
 		B876486B1F1F5F0E0028AE1A /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B876486C1F1F5F0E0028AE1A /* UserData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B87648731F208DB70028AE1A /* InterestLabel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InterestLabel+CoreDataClass.h"; sourceTree = "<group>"; };
+		B87648741F208DB70028AE1A /* InterestLabel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InterestLabel+CoreDataClass.m"; sourceTree = "<group>"; };
+		B87648751F208DB70028AE1A /* InterestLabel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InterestLabel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B87648761F208DB70028AE1A /* InterestLabel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InterestLabel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -621,6 +625,10 @@
 		B87648681F1F5F0E0028AE1A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B87648731F208DB70028AE1A /* InterestLabel+CoreDataClass.h */,
+				B87648741F208DB70028AE1A /* InterestLabel+CoreDataClass.m */,
+				B87648751F208DB70028AE1A /* InterestLabel+CoreDataProperties.h */,
+				B87648761F208DB70028AE1A /* InterestLabel+CoreDataProperties.m */,
 				B87648691F1F5F0E0028AE1A /* UserData+CoreDataClass.h */,
 				B876486A1F1F5F0E0028AE1A /* UserData+CoreDataClass.m */,
 				B876486B1F1F5F0E0028AE1A /* UserData+CoreDataProperties.h */,
