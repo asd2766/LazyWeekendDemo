@@ -8,6 +8,9 @@
 
 #import "ChangeMsgViewController.h"
 
+// model
+#import "UserData+CoreDataClass.h"
+
 @interface ChangeMsgViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -15,8 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
 
 // 参数
-@property (strong, nonatomic) NSString *sex; // 性别
-@property (strong, nonatomic) NSString *status; // 当前状态
+@property (nonatomic) NSInteger sex; // 性别
+@property (nonatomic) NSInteger status; // 当前状态
+@property (strong, nonatomic) UserData *user;
 
 @end
 
@@ -25,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.sex = -1;
+    self.status = -1;
     
     // 设置左边按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cat_me"] style:UIBarButtonItemStyleDone target:self.navigationController action:@selector(showMenu)];
@@ -47,11 +53,44 @@
     
     // 设置头像
     [CommonUtil addViewAttr:self.iconImageView borderWidth:1 borderColor:RGB(136, 136, 136) cornerRadius:CGRectGetWidth(self.iconImageView.frame)/2];
+    
+    // 获取个人信息
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 其他方法
+- (void)getData {
+    NSString *userId = [[CommonUtil currentUtil] getLoginUserid];
+    self.user = [UserData MR_findFirstByAttribute:@"id" withValue:userId];
+    if (self.user) {
+        self.nameTextField.text = [CommonUtil isEmpty:self.user.nickName] ? @"" : self.user.nickName;
+        
+        // 性别选中
+        if (self.user.sex) {
+            self.sex = self.user.sex;
+            UIView *view = [self.view viewWithTag:self.user.sex + 10];
+            if ([view isKindOfClass:[UIButton class]]) {
+                UIButton *btn = (UIButton *)view;
+                btn.selected = YES;
+                [self startButtonImageAnimate:btn];
+            }
+        }
+        
+        // 状态选中
+        if (self.user.status) {
+            self.status = self.user.status;
+            UIView *view = [self.view viewWithTag:self.user.status + 20];
+            if ([view isKindOfClass:[UIButton class]]) {
+                UIButton *btn = (UIButton *)view;
+                btn.selected = YES;
+            }
+        }
+    }
 }
 
 
@@ -71,16 +110,27 @@
     [self.nameTextField resignFirstResponder];
     
     // 判断是否选择性别
-    if ([CommonUtil isEmpty:self.sex]) {
+    if (self.sex <= 0) {
         [self makeToast:@"请选择性别"];
         return;
     }
     
     // 判断当前状态是否选择
-    if ([CommonUtil isEmpty:self.status]) {
+    if (self.status <= 0) {
         [self makeToast:@"请选择当前状态"];
         return;
     }
+    
+    // 将数据保存到数据库中
+    if (!self.user) {
+        self.user = [UserData MR_createEntity];
+    }
+    self.user.nickName = name;
+    self.user.sex = self.sex;
+    self.user.status = self.status;
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
     
     // 假装在掉接口
     [self showProgressView:self.view];
@@ -120,11 +170,7 @@
     button.selected = YES;
     [self startButtonImageAnimate:button];
     
-    if (button.tag == 10) {
-        self.sex = @"男生";
-    } else {
-        self.sex = @"女生";
-    }
+    self.sex = button.tag - 10;
 }
 
 
@@ -146,13 +192,7 @@
     
     button.selected = YES;
     
-    if (button.tag == 20) {
-        self.status = @"为人父母";
-    } else if (button.tag == 21){
-        self.status = @"恋爱中/已婚";
-    } else {
-        self.status = @"单身生活";
-    }
+    self.status = button.tag - 20;
 }
 
 

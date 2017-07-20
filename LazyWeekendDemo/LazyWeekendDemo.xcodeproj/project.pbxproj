@@ -446,20 +446,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B86888661F1EEF8800330B45 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		B86888671F1EEF8F00330B45 /* Mybooking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mybooking;
-			sourceTree = "<group>";
-		};
 		B86888681F1EEF9D00330B45 /* CollectActivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,8 +1008,6 @@
 				B86888F21F1F56B800330B45 /* LoginOrRegist */,
 				B86888691F1EEFA300330B45 /* InterestLabel */,
 				B86888681F1EEF9D00330B45 /* CollectActivity */,
-				B86888671F1EEF8F00330B45 /* Mybooking */,
-				B86888661F1EEF8800330B45 /* Setting */,
 				E8AE54FC1DE5767400E3A292 /* Menu */,
 				E8AE54FD1DE5767400E3A292 /* My */,
 				E8AE54FE1DE5767400E3A292 /* Search */,

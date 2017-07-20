@@ -3,15 +3,37 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[ChangeMsgViewController clickForSave]:ChangeMsgViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.sex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ChangeMsgViewController getData]:ChangeMsgViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.user">
+            </PersistentString>
+            <PersistentString
+               value = "self.user.nickName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController clickForLogin:]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[InsterestLabelViewController clickForSave]:InsterestLabelViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[InsterestLabelViewController viewDidLoad]:InsterestLabelViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.dataArray">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[LoginViewController clickForLogin:]:LoginViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[InsterestLabelViewController collectionView:didSelectItemAtIndexPath:]:InsterestLabelViewController.m">
@@ -28,9 +50,6 @@
                value = "delegate.userId">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[InsterestLabelViewController clickForSave]:InsterestLabelViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
