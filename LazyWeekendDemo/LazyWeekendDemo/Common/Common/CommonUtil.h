@@ -127,11 +127,13 @@ typedef void(^BackUserIdentifyState)(NSString* identifyState);
 - (BOOL)isLogin:(BOOL)needLogin;
 
 /**
- *  其他地方登录过，需要重新登录
+ *  判断是否登录(push不带动画效果)
  *
- *  @param needLogin YES:需要跳转到登录   NO：不需要跳转到登录页面
+ *  @param needLogin YES:未登录就弹出登录页面， NO：未登录不弹出登录页面
+ *
+ *  @return YES：已经登录 NO：未登录
  */
-- (void)reloadLogin:(BOOL)needLogin;
+- (BOOL)isLoginNoAnimate:(BOOL)needLogin;
 
 /**
  *  获取用户userId

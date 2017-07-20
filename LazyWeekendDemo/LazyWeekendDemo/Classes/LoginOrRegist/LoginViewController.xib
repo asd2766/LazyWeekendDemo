@@ -11,8 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="loginBtn" destination="dPa-ss-ekX" id="RFT-cq-MPM"/>
                 <outlet property="passwordTextField" destination="5QU-j3-uN1" id="UH7-Sw-7mo"/>
                 <outlet property="phoneTextField" destination="mtC-rw-xoA" id="lIP-sw-AnF"/>
+                <outlet property="phoneView" destination="nWS-ux-Hhq" id="b7r-jz-nyh"/>
+                <outlet property="pwdView" destination="nWc-nI-QBj" id="lEw-m4-f8Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +31,7 @@
                             <rect key="frame" x="8" y="0.0" width="335" height="44"/>
                             <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +50,7 @@
                             <rect key="frame" x="8" y="0.0" width="335" height="44"/>
                             <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +89,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="AD9-1Y-cqv" secondAttribute="trailing" constant="16" id="5gW-1I-swp"/>
                 <constraint firstItem="nWS-ux-Hhq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Ee7-oe-vZD"/>
@@ -101,7 +104,7 @@
                 <constraint firstItem="dPa-ss-ekX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ru9-pm-LmD"/>
                 <constraint firstItem="nWc-nI-QBj" firstAttribute="top" secondItem="nWS-ux-Hhq" secondAttribute="bottom" constant="15" id="ynN-98-Vvj"/>
             </constraints>
-            <point key="canvasLocation" x="-85.5" y="107.5"/>
+            <point key="canvasLocation" x="-339" y="156"/>
         </view>
     </objects>
 </document>

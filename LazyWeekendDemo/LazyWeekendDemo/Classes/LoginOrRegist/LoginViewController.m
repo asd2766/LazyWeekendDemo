@@ -7,10 +7,16 @@
 //
 
 #import "LoginViewController.h"
+#import "RegistViewController.h"
+#import "UserData+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIView *phoneView;
+@property (weak, nonatomic) IBOutlet UIView *pwdView;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -24,6 +30,11 @@
     
     // 标题
     self.navigationItem.title = @"登录";
+    
+    // 设置圆角
+    [CommonUtil addViewAttr:self.phoneView borderWidth:0 borderColor:nil cornerRadius:5];
+    [CommonUtil addViewAttr:self.pwdView borderWidth:0 borderColor:nil cornerRadius:5];
+    [CommonUtil addViewAttr:self.loginBtn borderWidth:0 borderColor:nil cornerRadius:5];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,10 +63,33 @@
     [self.passwordTextField resignFirstResponder];
     
     // 从数据库中查找该用户是否存在
+    UserData *user = [UserData MR_findFirstByAttribute:@"phone" withValue:phone];
     
+    if (!user) {
+        [self makeToast:@"该用户不存在"];
+        return;
+    }
+    
+    if (![user.password isEqualToString:[CommonUtil md5:pwd]]) {
+        [self makeToast:@"用户名或密码错误"];
+        return;
+    }
+    
+    // 用户名,密码正确, 成功登录, 保存登录的用户信息
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.userId = user.id;
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+
+/**
+ 跳转到注册页面
+
+ @param sender 
+ */
 - (IBAction)clickForRegist:(id)sender {
+    RegistViewController *nextController = [[RegistViewController alloc] initWithNibName:@"RegistViewController" bundle:nil];
+    [self.navigationController pushViewController:nextController animated:YES];
 }
 
 @end

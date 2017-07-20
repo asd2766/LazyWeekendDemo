@@ -11,6 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistViewController">
             <connections>
+                <outlet property="phoneTextField" destination="gya-0o-pmd" id="p0V-PS-Hos"/>
+                <outlet property="phoneView" destination="ZJk-pS-1LK" id="o0G-LY-biG"/>
+                <outlet property="pwd2TextField" destination="jhW-my-wrz" id="ixX-8l-FQC"/>
+                <outlet property="pwd2View" destination="Zga-Xm-Fbz" id="NZ6-97-ceA"/>
+                <outlet property="pwdTextField" destination="NTE-AO-AdS" id="mNO-hD-KwZ"/>
+                <outlet property="pwdView" destination="U8t-vc-H20" id="D4w-AA-TwK"/>
+                <outlet property="registBtn" destination="qKN-t9-94w" id="cvW-hx-pxZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +33,7 @@
                             <rect key="frame" x="8" y="0.0" width="335" height="44"/>
                             <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +52,7 @@
                             <rect key="frame" x="8" y="0.0" width="335" height="44"/>
                             <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +71,7 @@
                             <rect key="frame" x="8" y="0.0" width="335" height="44"/>
                             <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,9 +93,12 @@
                     <state key="normal" title="注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="clickForRegist:" destination="-1" eventType="touchUpInside" id="Sor-0n-djW"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Zga-Xm-Fbz" secondAttribute="trailing" constant="16" id="CVX-Vv-YzI"/>
                 <constraint firstItem="ZJk-pS-1LK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="EEH-Mq-v2A"/>
@@ -103,7 +113,7 @@
                 <constraint firstItem="U8t-vc-H20" firstAttribute="top" secondItem="ZJk-pS-1LK" secondAttribute="bottom" constant="15" id="tMI-Am-tp7"/>
                 <constraint firstItem="Zga-Xm-Fbz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="tmi-k9-PZh"/>
             </constraints>
-            <point key="canvasLocation" x="25.5" y="51.5"/>
+            <point key="canvasLocation" x="-173" y="-52"/>
         </view>
     </objects>
 </document>

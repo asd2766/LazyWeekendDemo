@@ -74,7 +74,7 @@
 #pragma mark -- private
 - (void)jumpToLogin {
     LoginViewController *nextController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self.navigationController pushViewController:nextController animated:YES];
+    [self.navigationController pushViewController:nextController animated:NO];
 }
 
 @end

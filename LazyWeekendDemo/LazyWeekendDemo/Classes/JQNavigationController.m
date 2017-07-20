@@ -23,9 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationBar.shadowImage = [UIImage new];
+    // 下面这行代码是去除navigationbar 的下边线
+//    self.navigationBar.shadowImage = [UIImage new];
     self.navigationBar.translucent = NO; // 是否半透明
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;

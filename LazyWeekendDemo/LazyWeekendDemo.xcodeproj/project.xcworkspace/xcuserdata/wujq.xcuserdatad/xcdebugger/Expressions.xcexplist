@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[RegistViewController clickForRegist:]:RegistViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "delegate.userId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[InsterestLabelViewController collectionView:didSelectItemAtIndexPath:]:InsterestLabelViewController.m">
          <PersistentStrings>
             <PersistentString

@@ -43,6 +43,7 @@
 		B876484F1F1F58FB0028AE1A /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = B876482D1F1F58FB0028AE1A /* MagicalRecord+Setup.m */; };
 		B87648501F1F58FB0028AE1A /* MagicalRecord+ShorthandMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B876482F1F1F58FB0028AE1A /* MagicalRecord+ShorthandMethods.m */; };
 		B87648511F1F58FB0028AE1A /* MagicalRecordInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B87648321F1F58FB0028AE1A /* MagicalRecordInternal.m */; };
+		B87648541F1F5C880028AE1A /* MainDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B87648521F1F5C880028AE1A /* MainDatabase.xcdatamodeld */; };
 		E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */; };
 		E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */; };
 		E8AE50AF1DE29BA900E3A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50AE1DE29BA900E3A292 /* main.m */; };
@@ -226,6 +227,11 @@
 		B87648341F1F58FB0028AE1A /* MagicalRecordShorthandMethodAliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthandMethodAliases.h; sourceTree = "<group>"; };
 		B87648351F1F58FB0028AE1A /* MagicalRecordXcode7CompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordXcode7CompatibilityMacros.h; sourceTree = "<group>"; };
 		B87648361F1F58FB0028AE1A /* MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecord.h; sourceTree = "<group>"; };
+		B87648531F1F5C880028AE1A /* MainDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainDatabase.xcdatamodel; sourceTree = "<group>"; };
+		B87648691F1F5F0E0028AE1A /* UserData+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserData+CoreDataClass.h"; sourceTree = "<group>"; };
+		B876486A1F1F5F0E0028AE1A /* UserData+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserData+CoreDataClass.m"; sourceTree = "<group>"; };
+		B876486B1F1F5F0E0028AE1A /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B876486C1F1F5F0E0028AE1A /* UserData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -479,6 +485,8 @@
 		B86888751F1F3A8E00330B45 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				B87648681F1F5F0E0028AE1A /* Model */,
+				B87648521F1F5C880028AE1A /* MainDatabase.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -608,6 +616,17 @@
 				B87648351F1F58FB0028AE1A /* MagicalRecordXcode7CompatibilityMacros.h */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		B87648681F1F5F0E0028AE1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B87648691F1F5F0E0028AE1A /* UserData+CoreDataClass.h */,
+				B876486A1F1F5F0E0028AE1A /* UserData+CoreDataClass.m */,
+				B876486B1F1F5F0E0028AE1A /* UserData+CoreDataProperties.h */,
+				B876486C1F1F5F0E0028AE1A /* UserData+CoreDataProperties.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E89AE05F1DF113DC0013C38D /* Cell */ = {
@@ -1309,6 +1328,7 @@
 				E8AE53ED1DE29DF000E3A292 /* MJRefreshStateHeader.m in Sources */,
 				B87648431F1F58FB0028AE1A /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
 				E8AE53631DE29DF000E3A292 /* CommonUtil+Files.m in Sources */,
+				B87648541F1F5C880028AE1A /* MainDatabase.xcdatamodeld in Sources */,
 				E8B795E91DED26C900E1572F /* ChangeMsgViewController.m in Sources */,
 				E8AE545F1DE29DF100E3A292 /* YYClassInfo.m in Sources */,
 				E8AE54E71DE2D72A00E3A292 /* IndexItemTableViewCell.m in Sources */,
@@ -1554,6 +1574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B87648521F1F5C880028AE1A /* MainDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B87648531F1F5C880028AE1A /* MainDatabase.xcdatamodel */,
+			);
+			currentVersion = B87648531F1F5C880028AE1A /* MainDatabase.xcdatamodel */;
+			path = MainDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E8AE50A21DE29BA900E3A292 /* Project object */;
 }
