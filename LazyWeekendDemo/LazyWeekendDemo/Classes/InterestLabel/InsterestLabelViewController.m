@@ -9,6 +9,9 @@
 #import "InsterestLabelViewController.h"
 #import "InsterestLabelCollectionViewCell.h"
 
+// model
+#import "InterestLabel+CoreDataClass.h"
+
 @interface InsterestLabelViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
@@ -36,34 +39,26 @@
     _cellId = @"InsterestLabelCell";
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"InsterestLabelCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:_cellId];
     
-    // 设置数据
-    self.dataArray = [NSMutableArray arrayWithObjects:
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_montain_gray", @"unselectImage", @"ic_c_montain", @"selectImage", @"周边游", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_bar_gray", @"unselectImage", @"ic_c_bar", @"selectImage", @"酒吧", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_music_gray", @"unselectImage", @"ic_c_music", @"selectImage", @"音乐", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_stage_gray", @"unselectImage", @"ic_c_stage", @"selectImage", @"戏剧", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_pic_gray", @"unselectImage", @"ic_c_pic", @"selectImage", @"展览", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_eat_gray", @"unselectImage", @"ic_c_eat", @"selectImage", @"美食", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_bag_gray", @"unselectImage", @"ic_c_bag", @"selectImage", @"购物", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_movie_gray", @"unselectImage", @"ic_c_movie", @"selectImage", @"电影", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_persons_gray", @"unselectImage", @"ic_c_persons", @"selectImage", @"聚会", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_backetball_gray", @"unselectImage", @"ic_c_backetball", @"selectImage", @"运动", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_leaf_gray", @"unselectImage", @"ic_c_leaf", @"selectImage", @"公益", @"name",nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"ic_c_shirt_gray", @"unselectImage", @"ic_c_shirt", @"selectImage", @"商业", @"name",nil],
-                      nil];
+    // 获取兴趣标签数据
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"InterestLabels.plist" ofType:nil];
     
+    self.dataArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+    // 设置数据选中效果
+    NSPredicate *pred = nil;
+    NSString *userId = [[CommonUtil currentUtil] getLoginUserid];
+    for (NSMutableDictionary *item in self.dataArray) {
+        // 判断该标签是否已经保存在数据库中
+        pred = [NSPredicate predicateWithFormat:@"userId == %@ && labelId == %@", userId, item[@"id"]];
+        InterestLabel *itemLabel = [InterestLabel MR_findFirstWithPredicate:pred];
+        if (itemLabel) {
+            // 选中过该数据
+            item[@"isSelect"] = @"1";
+        } else {
+            // 该选项选中, 未存储到数据库中, 保存数据
+            item[@"isSelect"] = @"0";
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +72,27 @@
  点击保存
  */
 - (void)clickForSave {
+    // 保存到数据库中
+    NSString *userId = [[CommonUtil currentUtil] getLoginUserid];
+    
+    NSPredicate *pred = nil;
+    for (NSDictionary *item in self.dataArray) {
+        // 判断该标签是否已经保存在数据库中
+        pred = [NSPredicate predicateWithFormat:@"userId == %@ && labelId == %@", userId, item[@"id"]];
+        InterestLabel *itemLabel = [InterestLabel MR_findFirstWithPredicate:pred];
+        if (itemLabel && !(item[@"isSelect"] && [item[@"isSelect"] boolValue])) {
+            // 该选项未选中, 之前选择过, 删除保存在数据库的数据
+            [itemLabel MR_deleteEntity];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        } else if (!itemLabel && item[@"isSelect"] && [item[@"isSelect"] boolValue]) {
+            // 该选项选中, 未存储到数据库中, 保存数据
+            itemLabel = [InterestLabel MR_createEntity];
+            itemLabel.userId = userId;
+            itemLabel.labelId = item[@"id"];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        }
+    }
+    
     [self showProgressView:self.view];
     [self performSelector:@selector(saveSuccess) withObject:nil afterDelay:0.5f];
 }
@@ -148,7 +164,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:self.dataArray[indexPath.row]];
     
-    if (dic[@"isSelect"] != nil && [dic[@"isSelect"] boolValue]) {
+    if (dic[@"isSelect"] && [dic[@"isSelect"] boolValue]) {
         // 选中效果
         dic[@"isSelect"] = @"0";
     } else {

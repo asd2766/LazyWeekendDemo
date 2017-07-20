@@ -44,6 +44,7 @@
 		B87648501F1F58FB0028AE1A /* MagicalRecord+ShorthandMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B876482F1F1F58FB0028AE1A /* MagicalRecord+ShorthandMethods.m */; };
 		B87648511F1F58FB0028AE1A /* MagicalRecordInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B87648321F1F58FB0028AE1A /* MagicalRecordInternal.m */; };
 		B87648541F1F5C880028AE1A /* MainDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B87648521F1F5C880028AE1A /* MainDatabase.xcdatamodeld */; };
+		B876487B1F208F550028AE1A /* InterestLabels.plist in Resources */ = {isa = PBXBuildFile; fileRef = B876487A1F208F550028AE1A /* InterestLabels.plist */; };
 		E89AE0631DF113F20013C38D /* SearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */; };
 		E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */; };
 		E8AE50AF1DE29BA900E3A292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE50AE1DE29BA900E3A292 /* main.m */; };
@@ -236,6 +237,7 @@
 		B87648741F208DB70028AE1A /* InterestLabel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InterestLabel+CoreDataClass.m"; sourceTree = "<group>"; };
 		B87648751F208DB70028AE1A /* InterestLabel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InterestLabel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B87648761F208DB70028AE1A /* InterestLabel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InterestLabel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B876487A1F208F550028AE1A /* InterestLabels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InterestLabels.plist; sourceTree = "<group>"; };
 		E89AE0601DF113F20013C38D /* SearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E89AE0611DF113F20013C38D /* SearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E89AE0621DF113F20013C38D /* SearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		B86888751F1F3A8E00330B45 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				B87648791F208F250028AE1A /* JsonData */,
 				B87648681F1F5F0E0028AE1A /* Model */,
 				B87648521F1F5C880028AE1A /* MainDatabase.xcdatamodeld */,
 			);
@@ -635,6 +638,14 @@
 				B876486C1F1F5F0E0028AE1A /* UserData+CoreDataProperties.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B87648791F208F250028AE1A /* JsonData */ = {
+			isa = PBXGroup;
+			children = (
+				B876487A1F208F550028AE1A /* InterestLabels.plist */,
+			);
+			path = JsonData;
 			sourceTree = "<group>";
 		};
 		E89AE05F1DF113DC0013C38D /* Cell */ = {
@@ -1203,6 +1214,7 @@
 				E8B795EA1DED26C900E1572F /* ChangeMsgViewController.xib in Resources */,
 				E89AE0641DF113F20013C38D /* SearchItemCollectionViewCell.xib in Resources */,
 				E8AE55031DE5768800E3A292 /* MenuViewController.xib in Resources */,
+				B876487B1F208F550028AE1A /* InterestLabels.plist in Resources */,
 				B86888741F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.xib in Resources */,
 				E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */,
 				B86888FA1F1F56B800330B45 /* LoginViewController.xib in Resources */,

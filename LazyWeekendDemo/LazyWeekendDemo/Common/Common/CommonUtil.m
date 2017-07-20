@@ -484,8 +484,7 @@ static CommonUtil *defaultUtil = nil;
  *  @return userId
  */
 - (NSString *)getLoginUserid {
-//    return appDelegate.userId;
-    return @"";
+    return appDelegate.userId;
 }
 
 /**
