@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1510" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Collections" representedClassName="Collections" syncable="YES" codeGenerationType="class">
+        <attribute name="activityId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="activityImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityPrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="InterestLabel" representedClassName="InterestLabel" syncable="YES" codeGenerationType="class">
         <attribute name="labelId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="labelName" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +23,8 @@
         <attribute name="status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserData" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="InterestLabel" positionX="-54" positionY="36" width="128" height="90"/>
+        <element name="UserData" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Collections" positionX="-54" positionY="36" width="128" height="150"/>
     </elements>
 </model>

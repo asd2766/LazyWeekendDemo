@@ -9,6 +9,7 @@
 #import "IndexViewController.h"
 #import "IndexItemTableViewCell.h"
 #import "MenuViewController.h"
+#import "Collections+CoreDataClass.h"
 
 @interface IndexViewController ()<IndexItemTableViewCellDelegate> {
     CGFloat menuHeight;
@@ -221,7 +222,11 @@
     [cell setHeaderImage:dic[@"imageUrl"]];
     [cell setTitle:dic[@"title"] location:dic[@"location"] time:dic[@"time"] collectionNum:dic[@"collectionNum"] price:dic[@"price"] delegate:self id:dic[@"id"]];
     
-    
+    // 判断是否已经收藏
+    NSString *userId = [[CommonUtil currentUtil] getLoginUserid];
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"userId == %@ && activityId == %@", userId, dic[@"id"]];
+    Collections *collectionAct = [Collections MR_findFirstWithPredicate:pre];
+    [cell updateCollectionStatus:collectionAct != nil];
     
     return cell;
 }
@@ -279,6 +284,23 @@
 
 #pragma mark - IndexItemTableViewCellDelegate
 - (void)collectionActivity:(NSDictionary *)activityDic {
-    
+    NSString *userId = [[CommonUtil currentUtil] getLoginUserid];
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"userId == %@ && activityId == %@", userId, activityDic[@"id"]];
+    Collections *collectionAct = [Collections MR_findFirstWithPredicate:pre];
+    if (collectionAct) {
+        // 表示这个已经收藏, 取消收藏
+        [collectionAct MR_deleteEntity];
+    } else {
+        // 还未收藏, 进行收藏操作
+        collectionAct = [Collections MR_createEntity];
+        collectionAct.userId = [userId intValue];
+        collectionAct.activityTitle = activityDic[@"title"];
+        collectionAct.activityId = [activityDic[@"id"] intValue];
+        collectionAct.activityImageUrl = activityDic[@"imageUrl"];
+        collectionAct.activityTime = activityDic[@"time"];
+        collectionAct.activityPrice = activityDic[@"price"];
+        collectionAct.activityLocation = activityDic[@"loaction"];
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 @end

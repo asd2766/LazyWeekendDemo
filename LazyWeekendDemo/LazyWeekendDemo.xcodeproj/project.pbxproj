@@ -156,6 +156,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80557B51F2738A80012AF22 /* Collections+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Collections+CoreDataClass.h"; sourceTree = "<group>"; };
+		B80557B61F2738A80012AF22 /* Collections+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Collections+CoreDataClass.m"; sourceTree = "<group>"; };
+		B80557B71F2738A80012AF22 /* Collections+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Collections+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B80557B81F2738A80012AF22 /* Collections+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Collections+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B868886A1F1EEFC600330B45 /* InsterestLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterestLabelViewController.h; sourceTree = "<group>"; };
 		B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterestLabelViewController.m; sourceTree = "<group>"; };
 		B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelViewController.xib; sourceTree = "<group>"; };
@@ -614,6 +618,10 @@
 		B87648681F1F5F0E0028AE1A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B80557B51F2738A80012AF22 /* Collections+CoreDataClass.h */,
+				B80557B61F2738A80012AF22 /* Collections+CoreDataClass.m */,
+				B80557B71F2738A80012AF22 /* Collections+CoreDataProperties.h */,
+				B80557B81F2738A80012AF22 /* Collections+CoreDataProperties.m */,
 				B87648731F208DB70028AE1A /* InterestLabel+CoreDataClass.h */,
 				B87648741F208DB70028AE1A /* InterestLabel+CoreDataClass.m */,
 				B87648751F208DB70028AE1A /* InterestLabel+CoreDataProperties.h */,
