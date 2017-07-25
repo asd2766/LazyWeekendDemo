@@ -28,6 +28,9 @@
          contextName = "-[InsterestLabelViewController clickForSave]:InsterestLabelViewController.m">
       </ContextState>
       <ContextState
+         contextName = "-[IndexViewController collectionActivity:]:IndexViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[InsterestLabelViewController viewDidLoad]:InsterestLabelViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -42,6 +45,9 @@
                value = "self.dataArray">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CollectionsViewController tableView:cellForRowAtIndexPath:]:CollectionsViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[RegistViewController clickForRegist:]:RegistViewController.m">

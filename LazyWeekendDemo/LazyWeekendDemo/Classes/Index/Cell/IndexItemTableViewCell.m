@@ -52,6 +52,8 @@
  */
 - (void)setHeaderImage:(NSString *)imageUrl {
     [self.postImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil];
+    
+    [self.activityDic setObject:imageUrl forKey:@"imageUrl"];
 }
 
 /**

@@ -11,6 +11,7 @@
 #import "ChangeMsgViewController.h"
 #import "InsterestLabelViewController.h" // 选择我的兴趣页面
 #import "LoginViewController.h"
+#import "CollectionsViewController.h" // 我的收藏
 
 @interface MenuViewController () {
     CGFloat menuHeight;
@@ -29,8 +30,7 @@
     
     menuHeight = _screenHeight - 64 - 40;
     
-    self.dataArray = [NSArray arrayWithObjects:@"首页", @"修改个人资料", @"选择我的兴趣标签", @"查看我的预订",
-                      @"收藏的活动", @"设置", nil];
+    self.dataArray = [NSArray arrayWithObjects:@"首页", @"修改个人资料", @"选择我的兴趣标签", @"收藏的活动", @"设置", nil];
     
 
     
@@ -61,6 +61,8 @@
         self.selectIndex = 1;
     } else if ([topVC isKindOfClass:[InsterestLabelViewController class]]) {
         self.selectIndex = 2;
+    } else if ([topVC isKindOfClass:[CollectionsViewController class]]) {
+        self.selectIndex = 3;
     }
     [self.mainTableView reloadData];
     
@@ -71,8 +73,7 @@
         // 未登录
         self.dataArray = [NSArray arrayWithObjects:@"首页", @"登录", nil];
     } else {
-        self.dataArray = [NSArray arrayWithObjects:@"首页", @"修改个人资料", @"选择我的兴趣标签",
-                          @"收藏的活动", @"退出登录", nil];
+        self.dataArray = [NSArray arrayWithObjects:@"首页", @"修改个人资料", @"选择我的兴趣标签", @"收藏的活动", @"退出登录", nil];
     }
 }
 
@@ -145,6 +146,12 @@
         case 2: {
             // 选择我的兴趣页面
             InsterestLabelViewController *nextController = [[InsterestLabelViewController alloc] initWithNibName:@"InsterestLabelViewController" bundle:nil];
+            [self.navigationController pushViewController:nextController animated:NO];
+            break;
+        }
+        case 3: {
+            // 我的收藏页面
+            CollectionsViewController *nextController = [[CollectionsViewController alloc] initWithNibName:@"CollectionsViewController" bundle:nil];
             [self.navigationController pushViewController:nextController animated:NO];
             break;
         }

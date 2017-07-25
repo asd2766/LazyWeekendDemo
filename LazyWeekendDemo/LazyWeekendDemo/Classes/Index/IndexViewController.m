@@ -54,6 +54,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.mainTableView reloadData];
+}
+
 #pragma private
 /**
  *  初始化数据
@@ -299,7 +304,7 @@
         collectionAct.activityImageUrl = activityDic[@"imageUrl"];
         collectionAct.activityTime = activityDic[@"time"];
         collectionAct.activityPrice = activityDic[@"price"];
-        collectionAct.activityLocation = activityDic[@"loaction"];
+        collectionAct.activityLocation = activityDic[@"location"];
     }
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }

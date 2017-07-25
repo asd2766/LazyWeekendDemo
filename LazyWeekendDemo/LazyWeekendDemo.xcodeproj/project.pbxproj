@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80557BE1F273AE10012AF22 /* CollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80557BC1F273AE10012AF22 /* CollectionsViewController.m */; };
+		B80557BF1F273AE10012AF22 /* CollectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80557BD1F273AE10012AF22 /* CollectionsViewController.xib */; };
+		B80557C41F273B640012AF22 /* CollectionItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B80557C21F273B640012AF22 /* CollectionItemTableViewCell.m */; };
+		B80557C51F273B640012AF22 /* CollectionItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80557C31F273B640012AF22 /* CollectionItemTableViewCell.xib */; };
 		B868886D1F1EEFC600330B45 /* InsterestLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */; };
 		B868886E1F1EEFC600330B45 /* InsterestLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */; };
 		B86888731F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */; };
@@ -160,6 +164,12 @@
 		B80557B61F2738A80012AF22 /* Collections+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Collections+CoreDataClass.m"; sourceTree = "<group>"; };
 		B80557B71F2738A80012AF22 /* Collections+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Collections+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B80557B81F2738A80012AF22 /* Collections+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Collections+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B80557BB1F273AE10012AF22 /* CollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionsViewController.h; sourceTree = "<group>"; };
+		B80557BC1F273AE10012AF22 /* CollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsViewController.m; sourceTree = "<group>"; };
+		B80557BD1F273AE10012AF22 /* CollectionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionsViewController.xib; sourceTree = "<group>"; };
+		B80557C11F273B640012AF22 /* CollectionItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemTableViewCell.h; sourceTree = "<group>"; };
+		B80557C21F273B640012AF22 /* CollectionItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionItemTableViewCell.m; sourceTree = "<group>"; };
+		B80557C31F273B640012AF22 /* CollectionItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionItemTableViewCell.xib; sourceTree = "<group>"; };
 		B868886A1F1EEFC600330B45 /* InsterestLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterestLabelViewController.h; sourceTree = "<group>"; };
 		B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterestLabelViewController.m; sourceTree = "<group>"; };
 		B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelViewController.xib; sourceTree = "<group>"; };
@@ -450,9 +460,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B80557C01F273B4C0012AF22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B80557C11F273B640012AF22 /* CollectionItemTableViewCell.h */,
+				B80557C21F273B640012AF22 /* CollectionItemTableViewCell.m */,
+				B80557C31F273B640012AF22 /* CollectionItemTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B86888681F1EEF9D00330B45 /* CollectActivity */ = {
 			isa = PBXGroup;
 			children = (
+				B80557C01F273B4C0012AF22 /* Cell */,
+				B80557BB1F273AE10012AF22 /* CollectionsViewController.h */,
+				B80557BC1F273AE10012AF22 /* CollectionsViewController.m */,
+				B80557BD1F273AE10012AF22 /* CollectionsViewController.xib */,
 			);
 			path = CollectActivity;
 			sourceTree = "<group>";
@@ -1211,6 +1235,8 @@
 				E8B795D51DE58B7B00E1572F /* BaseIndexViewController.xib in Resources */,
 				B86888FA1F1F56B800330B45 /* LoginViewController.xib in Resources */,
 				E8AE50BA1DE29BA900E3A292 /* Assets.xcassets in Resources */,
+				B80557C51F273B640012AF22 /* CollectionItemTableViewCell.xib in Resources */,
+				B80557BF1F273AE10012AF22 /* CollectionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1305,6 +1331,7 @@
 				E8AE54321DE29DF000E3A292 /* UIButton+WebCache.m in Sources */,
 				E8AE53EF1DE29DF000E3A292 /* MJRefreshConst.m in Sources */,
 				B876484A1F1F58FB0028AE1A /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				B80557C41F273B640012AF22 /* CollectionItemTableViewCell.m in Sources */,
 				E8AE53F01DE29DF000E3A292 /* UIScrollView+MJExtension.m in Sources */,
 				E8AE549D1DE29DF500E3A292 /* ZXTextField.m in Sources */,
 				B876484E1F1F58FB0028AE1A /* MagicalRecord+Options.m in Sources */,
@@ -1313,6 +1340,7 @@
 				E8AE54601DE29DF100E3A292 /* NoDataView.m in Sources */,
 				E8B795E01DE8105800E1572F /* JQNavigationController.m in Sources */,
 				E8AE549E1DE29DF500E3A292 /* ZXView.m in Sources */,
+				B80557BE1F273AE10012AF22 /* CollectionsViewController.m in Sources */,
 				E8AE53E71DE29DF000E3A292 /* MJRefreshAutoStateFooter.m in Sources */,
 				E8AE549A1DE29DF500E3A292 /* ZXImageView.m in Sources */,
 				E8AE53E81DE29DF000E3A292 /* MJRefreshBackGifFooter.m in Sources */,
