@@ -20,12 +20,17 @@
 @property (weak, nonatomic) IBOutlet JQPaddingLabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *collectionBtn;
 @property (weak, nonatomic) IBOutlet JQPaddingLabel *priceLabel;
+
+// 参数
+@property (strong, nonatomic) NSMutableDictionary *activityDic;
 @end
 
 @implementation IndexItemTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    self.activityDic = [NSMutableDictionary dictionary];
     
     [self.collectionBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
     // 添加边框，圆角
@@ -57,10 +62,12 @@
  *  @param time          时间
  *  @param collectionNum 收藏人数
  *  @param price         价格
+ *  @param delegate      代理
+ *  @param id            活动id
  */
 - (void)setTitle:(NSString *)title location:(NSString *)location
             time:(NSString *)time collectionNum:(NSString *)collectionNum
-           price:(NSString *)price {
+           price:(NSString *)price delegate:(id)delegate id:(NSString *)id{
     
     // 标题
     self.titleLabel.text = [CommonUtil isEmpty:title] ? @"暂无" : title;
@@ -80,8 +87,50 @@
     // 价格
     self.priceLabel.edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
     price = [CommonUtil isEmpty:price] ? @" -- " : price;
-    price = [NSString stringWithFormat:@"￥%@", price];
-    self.priceLabel.text = price;
+    self.priceLabel.text = [NSString stringWithFormat:@"￥%@", price];
+    
+    self.delegate = delegate;
+    
+    // 存储数据
+    [self.activityDic setObject:title forKey:@"title"];
+    [self.activityDic setObject:location forKey:@"location"];
+    [self.activityDic setObject:time forKey:@"time"];
+    [self.activityDic setObject:collectionNum forKey:@"collectionNum"];
+    [self.activityDic setObject:price forKey:@"price"];
+    [self.activityDic setObject:id forKey:@"id"];
+}
+
+
+/**
+ 设置是否收藏
+
+ @param isCollection YES: 收藏状态  NO: 未收藏
+ */
+- (void)updateCollectionStatus:(Boolean)isCollection {
+    self.collectionBtn.selected = isCollection;
+}
+
+/**
+ 点击收藏
+
+ @param sender
+ */
+- (IBAction)clickForCollection:(id)sender {
+    self.collectionBtn.selected = !self.collectionBtn.selected;
+    
+    [UIView beginAnimations:@"scale"context:nil];
+    [UIView setAnimationDuration:.25f];
+    self.collectionBtn.imageView.transform = CGAffineTransformMakeScale(0.8, 0.8);
+    self.collectionBtn.imageView.transform = CGAffineTransformMakeScale(1.5, 1.5);
+    self.collectionBtn.imageView.transform = CGAffineTransformMakeScale(1.3, 1.3);
+    self.collectionBtn.imageView.transform = CGAffineTransformMakeScale(1, 1);
+    [UIView setAnimationRepeatAutoreverses:YES];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView commitAnimations];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionActivity:)]) {
+        [self.delegate collectionActivity:self.activityDic];
+    }
 }
 
 @end

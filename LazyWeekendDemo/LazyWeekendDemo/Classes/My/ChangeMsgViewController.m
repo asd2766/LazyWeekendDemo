@@ -204,11 +204,11 @@
  @param button 按钮
  */
 - (void)startButtonImageAnimate:(UIButton *)button {
-    // 设置图片先为90度垂直
-    button.imageView.layer.transform = CATransform3DRotate([self getTransform3D:90 * M_PI / 180], 0, 0, 0, 0);
     // 开始动画, 接着开始将设置的90度旋转回原来的度数
     [UIView beginAnimations:@"rotate"context:nil];
     [UIView setAnimationDuration:.35f];
+    // 设置图片先为90度垂直
+    button.imageView.layer.transform = CATransform3DRotate([self getTransform3D:90 * M_PI / 180], 0, 0, 0, 0);
     button.imageView.layer.transform = CATransform3DRotate([self getTransform3D:0], 0, 0, 0, 0);
     [UIView commitAnimations];
 }

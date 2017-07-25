@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="345"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="344"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="344.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Dp-XF-bgJ">
@@ -26,7 +30,7 @@
                                     <constraint firstAttribute="height" constant="55" id="V9U-jL-Nui"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.25882352941176467" green="0.26666666666666666" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.25882352941176467" green="0.26666666666666666" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目的地：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHy-tQ-jOK" userLabel="目的地">
@@ -35,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="25" id="vFT-3U-Tbc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.49803921568627452" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.49803921568627452" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7d-9N-Ddg" userLabel="日期" customClass="JQPaddingLabel">
@@ -44,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="21" id="MNS-CS-rdH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoP-ls-vfz" userLabel="价格" customClass="JQPaddingLabel">
@@ -53,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="21" id="A0K-h7-i5g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljx-yT-xaq">
@@ -65,12 +69,15 @@
                                 <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="0人收藏" image="ic_nav_black_heart_off">
-                                    <color key="titleColor" red="0.49803921569999998" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.49803921569999998" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="selected" image="ic_nav_black_heart_on"/>
+                                <connections>
+                                    <action selector="clickForCollection:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q9C-Qm-Ugg"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ljx-yT-xaq" secondAttribute="bottom" constant="9" id="2JT-jw-Xle"/>
                             <constraint firstItem="pHy-tQ-jOK" firstAttribute="top" secondItem="kvl-j9-H9U" secondAttribute="bottom" id="A6Z-bR-j9I"/>
@@ -107,11 +114,11 @@
                 <outlet property="timeLabel" destination="t7d-9N-Ddg" id="jCV-Ql-hQe"/>
                 <outlet property="titleLabel" destination="kvl-j9-H9U" id="BsS-Lv-4Rc"/>
             </connections>
-            <point key="canvasLocation" x="596" y="462.5"/>
+            <point key="canvasLocation" x="430" y="447"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_nav_black_heart_off" width="25" height="25"/>
-        <image name="ic_nav_black_heart_on" width="25" height="25"/>
+        <image name="ic_nav_black_heart_off" width="15" height="15"/>
+        <image name="ic_nav_black_heart_on" width="15" height="15"/>
     </resources>
 </document>

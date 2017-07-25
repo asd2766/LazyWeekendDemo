@@ -10,7 +10,7 @@
 #import "IndexItemTableViewCell.h"
 #import "MenuViewController.h"
 
-@interface IndexViewController () {
+@interface IndexViewController ()<IndexItemTableViewCellDelegate> {
     CGFloat menuHeight;
 }
 
@@ -65,6 +65,7 @@
                          @"东京・369km・户外活动", @"location",
                          @"2017年2月1日~2017年2月8日", @"time",
                          @"25", @"collectionNum", @"19200", @"price",
+                         @"1", @"id",
                          nil];
     [self.dataArray addObject:dic];
     
@@ -74,6 +75,7 @@
            @"西藏・369km・户外活动", @"location",
            @"2017年1月28日~2017年2月3日", @"time",
            @"266", @"collectionNum", @"3680", @"price",
+           @"2", @"id",
            nil];
     [self.dataArray addObject:dic];
     
@@ -83,6 +85,7 @@
            @"海南・369km・户外活动", @"location",
            @"本周六 8:30", @"time",
            @"51", @"collectionNum", @"2880", @"price",
+           @"3", @"id",
            nil];
     [self.dataArray addObject:dic];
     
@@ -216,7 +219,9 @@
     
     NSDictionary *dic = self.dataArray[indexPath.row];
     [cell setHeaderImage:dic[@"imageUrl"]];
-    [cell setTitle:dic[@"title"] location:dic[@"location"] time:dic[@"time"] collectionNum:dic[@"collectionNum"] price:dic[@"price"]];
+    [cell setTitle:dic[@"title"] location:dic[@"location"] time:dic[@"time"] collectionNum:dic[@"collectionNum"] price:dic[@"price"] delegate:self id:dic[@"id"]];
+    
+    
     
     return cell;
 }
@@ -270,5 +275,10 @@
         // 闭合状态，展开操作
         button.tag = 1;
     }
+}
+
+#pragma mark - IndexItemTableViewCellDelegate
+- (void)collectionActivity:(NSDictionary *)activityDic {
+    
 }
 @end
