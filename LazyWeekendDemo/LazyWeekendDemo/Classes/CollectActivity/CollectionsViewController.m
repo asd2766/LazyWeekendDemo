@@ -9,6 +9,7 @@
 #import "CollectionsViewController.h"
 #import "Collections+CoreDataClass.h"
 #import "CollectionItemTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface CollectionsViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -79,7 +80,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"哎呦我被点击啦");
-    
+    Collections *item = self.dataArray[indexPath.row];
+    DetailViewController *nextController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    nextController.detailDic = item;
+    [self.navigationController pushViewController:nextController animated:YES];
 }
 
 // cell 是否可以编辑,删除等

@@ -27,13 +27,33 @@
 
 - (void)setupViews;
 
+// 参数
+@property (nonatomic, assign) id<SGFocusImageFrameDelegate> delegate;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) NSTimer *autoScrollTimer;
+
+@property(nonatomic, assign) UIViewContentMode imageType;//imageView展示类型
+
 @end
 
-static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
+static int SWITCH_FOCUS_PICTURE_INTERVAL = 5.0f; //switch interval time
 
 @implementation SGFocusImageFrame
 
+/**
+ 初始化
+
+ @param frame frame
+ @param delegate 代理
+ @param items 图片数组
+ @param isAuto 是否自动滚动
+ @param focusImageType 展示类型
+ @param isVertical 是否垂直滚动
+ @return
+ */
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(SGFocusImageType )focusImageType andWithisVertical:(BOOL )isVertical{
+    self.imageType = UIViewContentModeScaleAspectFit;
     self = [super initWithFrame:frame];
     if (self)
     {
@@ -52,19 +72,49 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     return self;
 }
 
+
+/**
+ 初始化页面
+
+ @param frame frame
+ @param delegate 代理
+ @param items 展示内容(数组)
+ @param isAuto 是否自动滚动
+ @return
+ */
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto
 {
-    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES focusImageType: SGFocusOneyImageAndPageControl];
+    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES focusImageType: SGFocusOnlyImageAndPageControl imageType:UIViewContentModeScaleAspectFit];
 }
 
-- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto imageType:(NSString*)type{
+/**
+ 初始化页面
+
+ @param frame frame
+ @param delegate 代理
+ @param items 展示的内容(数组)
+ @param isAuto 是否自动滚动
+ @param type 图片的展示类型(宽高自适应, 拉伸等)
+ @return
+ */
+- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto imageType:(UIViewContentMode)type{
+    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES focusImageType: SGFocusOnlyImageAndPageControl imageType:type];
     
+}
+
+/**
+ 初始化页面
+
+ @param frame frame
+ @param delegate 代理
+ @param items 展示的内容(数组)
+ @param isAuto 是否自动滚动
+ @param focusImageType 展示类型
+ @param type 图片的展示类型(宽高自适应, 拉伸等)
+ @return
+ */
+- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(SGFocusImageType)focusImageType imageType:(UIViewContentMode)type{
     self.imageType = type;
-    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES focusImageType: SGFocusOneyImageAndPageControl];
-    
-}
-
-- (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items isAuto:(BOOL)isAuto focusImageType:(SGFocusImageType)focusImageType{
     self = [super initWithFrame:frame];
     if (self)
     {
@@ -92,9 +142,17 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     return self;
 }
 
+/**
+ 初始化页面
+
+ @param frame frame
+ @param delegate 代理
+ @param items 展示内容(数组)
+ @return
+ */
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items
 {
-    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES];
+    return [self initWithFrame:frame delegate:delegate imageItems:items isAuto:YES imageType:UIViewContentModeScaleAspectFit];
 }
 
 - (void)dealloc
@@ -120,25 +178,27 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.pagingEnabled = YES;
+    _scrollView.delegate = self;
     
+    _pageControl = [[UIPageControl alloc] init];
     _pageControl.numberOfPages = _imageItems.count>1?_imageItems.count -2:_imageItems.count;
     _pageControl.currentPage = 0;
     _pageControl.currentPageIndicatorTintColor = RGB(204, 0, 0);
     _pageControl.pageIndicatorTintColor = RGB(188, 188, 188);
-    
-    _scrollView.delegate = self;
-    
     _pageControl.hidden = NO;
+    
     switch (focusImageType) {
-        case SGFocusOneyImageAndPageControl:
+        case SGFocusOnlyImageAndPageControl:
         {
-            _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height -16-10, CGRectGetWidth(self.bounds), 10)];
+            _pageControl.frame = CGRectMake(0, self.frame.size.height -16-10, CGRectGetWidth(self.bounds), 10);
             _pageControl.userInteractionEnabled = NO;
             [self addSubview:_pageControl];
+
             
             for (int i = 0; i < _imageItems.count; i++) {
                 SGFocusImageItem *item = [_imageItems objectAtIndex:i];
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space)];
+                imageView.tag = i + 10;
                 //加载图片
                 if (_focusImageType == SGFocusUIImageType) {
                     imageView.image = item.image;
@@ -147,22 +207,12 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
                     [CommonUtil setSDWebImageProperties];
                     
                     [imageView sd_setImageWithURL:[NSURL URLWithString:item.imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                        
-                        if (self.imageType.length!=0) {
-                            imageView.contentMode =UIViewContentModeScaleToFill;
-                        }else{
-                            imageView.contentMode = UIViewContentModeScaleAspectFit;
-                        }
+                        // 图片展示类型
+                        imageView.contentMode = self.imageType;
                     }];
-                    
                 }
                 
                 //修改视图显示模式
-                if (self.imageType.length!=0) {
-                    imageView.contentMode = UIViewContentModeScaleToFill;
-                }else{
-                    imageView.contentMode = UIViewContentModeScaleAspectFit;
-                }
                 [imageView setClipsToBounds:YES];
                 [_scrollView addSubview:imageView];
             }
@@ -173,14 +223,14 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
             tapGestureRecognize.numberOfTapsRequired = 1;
             [_scrollView addGestureRecognizer:tapGestureRecognize];
             _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * _imageItems.count, _scrollView.frame.size.height);
-            
         }
             break;
-        case SGFocusOneyImage:
+        case SGFocusOnlyImage:
         {
             for (int i = 0; i < _imageItems.count; i++) {
                 SGFocusImageItem *item = [_imageItems objectAtIndex:i];
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space)];
+                imageView.tag = i + 10;
                 //显示图片
                 if (_focusImageType == SGFocusUIImageType) {
                     imageView.image = item.image;
@@ -188,11 +238,8 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
                     
                     [CommonUtil setSDWebImageProperties];
                     [imageView sd_setImageWithURL:[NSURL URLWithString:item.imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                        if (self.imageType.length!=0) {
-                            imageView.contentMode = UIViewContentModeScaleAspectFit;
-                        }else{
-                            imageView.contentMode = UIViewContentModeScaleToFill;
-                        }
+                        // 图片展示类型
+                        imageView.contentMode = self.imageType;
                     }];
                 }
                 
@@ -326,10 +373,8 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
         
         if (_isAutoPlay) {
             
-            //            self.scrollInterval = 0;
+            self.scrollInterval = 0;
             if (focusImageType == SGFocusOneyTradeText || focusImageType == SGFocusNews) {
-                
-//                self.scrollInterval = 0;
                 self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(switchFocusImageItems:) userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"3",@"loopTime", nil] repeats:YES];
             }else{
                 
@@ -340,6 +385,54 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     }
 }
 
+
+/**
+ 更新frame
+
+ @param frame scrollView的frame
+ @param focusImageType 显示的类型(目前仅支持 SGFocusOnlyImageAndPageControl, SGFocusOnlyImage)
+ */
+- (void)updateFrame:(CGRect)frame focusImageType:(SGFocusImageType )focusImageType
+{
+    _scrollView.frame = frame;
+    float space = 0;
+    
+    switch (focusImageType) {
+        case SGFocusOnlyImageAndPageControl:
+        {
+            _pageControl.frame = CGRectMake(0, frame.size.height -16-10, CGRectGetWidth(frame), 10);
+            
+            for (int i = 0; i < _imageItems.count; i++) {
+                UIView *view = [_scrollView viewWithTag:i + 10];
+                view.frame = CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space);
+                if ([view isKindOfClass:[UIImageView class]]) {
+                    UIImageView *imageView = (UIImageView *)view;
+                    imageView.contentMode = UIViewContentModeScaleToFill;
+                }
+            }
+            
+            _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * _imageItems.count, _scrollView.frame.size.height);
+            
+        }
+            break;
+        case SGFocusOnlyImage:
+        {
+            for (int i = 0; i < _imageItems.count; i++) {
+                UIView *view = [_scrollView viewWithTag:i + 10];
+                view.frame = CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space);
+                if ([view isKindOfClass:[UIImageView class]]) {
+                    UIImageView *imageView = (UIImageView *)view;
+                    imageView.contentMode = UIViewContentModeScaleToFill;
+                }
+            }
+        }
+            break;
+        default:
+            break;
+    }
+
+}
+
 #pragma mark - private methods
 - (void)setupViews
 {
@@ -347,7 +440,7 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     _scrollView.scrollsToTop = NO;
     float space = 0;
     float buttomSpace = 0;
-    if (_focusImageType == SGFocusOneyImageAndPageControl) {
+    if (_focusImageType == SGFocusOnlyImageAndPageControl) {
         buttomSpace = 20;
     }
     
@@ -393,20 +486,8 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
             [CommonUtil setSDWebImageProperties];
             [imageView sd_setImageWithURL:[NSURL URLWithString:item.imageUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 //修改视图模式
-                if (self.imageType.length != 0) {
-                    imageView.contentMode = UIViewContentModeScaleToFill;
-                }else{
-                    imageView.contentMode = UIViewContentModeScaleAspectFit;
-                }
-                
+                imageView.contentMode = self.imageType;
             }];
-            
-            //修改视图模式
-            if (self.imageType.length!=0) {
-                imageView.contentMode =UIViewContentModeScaleToFill;
-            }else{
-                imageView.contentMode = UIViewContentModeScaleAspectFit;
-            }
         }
         
         [imageView setClipsToBounds:YES];
@@ -570,6 +651,11 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
     }
 }
 
+/**
+ 滚动到第几个位置
+ 
+ @param aIndex 位置下标
+ */
 - (void)scrollToIndex:(int)aIndex
 {
     if ([_imageItems count]>1)

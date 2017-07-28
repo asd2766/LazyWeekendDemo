@@ -14,6 +14,7 @@
 #define _screenWidth                    [UIScreen mainScreen].bounds.size.width
 #define _screenHeight                   [UIScreen mainScreen].bounds.size.height
 #define _screenWidthRatio               [UIScreen mainScreen].bounds.size.width/320
+#define _screenWidthRatio_375           [UIScreen mainScreen].bounds.size.width/375
 
 #define IOS7                            [[[UIDevice currentDevice] systemVersion] floatValue]>=7
 // 等于

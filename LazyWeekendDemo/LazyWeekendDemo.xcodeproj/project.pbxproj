@@ -11,6 +11,8 @@
 		B80557BF1F273AE10012AF22 /* CollectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80557BD1F273AE10012AF22 /* CollectionsViewController.xib */; };
 		B80557C41F273B640012AF22 /* CollectionItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B80557C21F273B640012AF22 /* CollectionItemTableViewCell.m */; };
 		B80557C51F273B640012AF22 /* CollectionItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80557C31F273B640012AF22 /* CollectionItemTableViewCell.xib */; };
+		B80557CA1F29729E0012AF22 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80557C81F29729E0012AF22 /* DetailViewController.m */; };
+		B80557CB1F29729E0012AF22 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80557C91F29729E0012AF22 /* DetailViewController.xib */; };
 		B868886D1F1EEFC600330B45 /* InsterestLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */; };
 		B868886E1F1EEFC600330B45 /* InsterestLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */; };
 		B86888731F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B86888711F1EF3DD00330B45 /* InsterestLabelCollectionViewCell.m */; };
@@ -67,8 +69,6 @@
 		E8AE53C01DE29DF000E3A292 /* DSLoopDbImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE51BC1DE29DEF00E3A292 /* DSLoopDbImageFrame.m */; };
 		E8AE53C11DE29DF000E3A292 /* SGFocusImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE51BE1DE29DEF00E3A292 /* SGFocusImageFrame.m */; };
 		E8AE53C21DE29DF000E3A292 /* SGFocusImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE51C01DE29DEF00E3A292 /* SGFocusImageItem.m */; };
-		E8AE53C31DE29DF000E3A292 /* TopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE51C21DE29DEF00E3A292 /* TopicItem.m */; };
-		E8AE53C41DE29DF000E3A292 /* TopicItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8AE51C31DE29DEF00E3A292 /* TopicItem.xib */; };
 		E8AE53DF1DE29DF000E3A292 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE52031DE29DEF00E3A292 /* MBProgressHUD.m */; };
 		E8AE53E01DE29DF000E3A292 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE52071DE29DEF00E3A292 /* MJRefreshAutoFooter.m */; };
 		E8AE53E11DE29DF000E3A292 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AE52091DE29DEF00E3A292 /* MJRefreshBackFooter.m */; };
@@ -170,6 +170,9 @@
 		B80557C11F273B640012AF22 /* CollectionItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemTableViewCell.h; sourceTree = "<group>"; };
 		B80557C21F273B640012AF22 /* CollectionItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionItemTableViewCell.m; sourceTree = "<group>"; };
 		B80557C31F273B640012AF22 /* CollectionItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionItemTableViewCell.xib; sourceTree = "<group>"; };
+		B80557C71F29729E0012AF22 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B80557C81F29729E0012AF22 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B80557C91F29729E0012AF22 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		B868886A1F1EEFC600330B45 /* InsterestLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterestLabelViewController.h; sourceTree = "<group>"; };
 		B868886B1F1EEFC600330B45 /* InsterestLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterestLabelViewController.m; sourceTree = "<group>"; };
 		B868886C1F1EEFC600330B45 /* InsterestLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsterestLabelViewController.xib; sourceTree = "<group>"; };
@@ -292,9 +295,6 @@
 		E8AE51BE1DE29DEF00E3A292 /* SGFocusImageFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFocusImageFrame.m; sourceTree = "<group>"; };
 		E8AE51BF1DE29DEF00E3A292 /* SGFocusImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFocusImageItem.h; sourceTree = "<group>"; };
 		E8AE51C01DE29DEF00E3A292 /* SGFocusImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFocusImageItem.m; sourceTree = "<group>"; };
-		E8AE51C11DE29DEF00E3A292 /* TopicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicItem.h; sourceTree = "<group>"; };
-		E8AE51C21DE29DEF00E3A292 /* TopicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicItem.m; sourceTree = "<group>"; };
-		E8AE51C31DE29DEF00E3A292 /* TopicItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItem.xib; sourceTree = "<group>"; };
 		E8AE52021DE29DEF00E3A292 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		E8AE52031DE29DEF00E3A292 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E8AE52061DE29DEF00E3A292 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -468,6 +468,16 @@
 				B80557C31F273B640012AF22 /* CollectionItemTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B80557C61F2972870012AF22 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B80557C71F29729E0012AF22 /* DetailViewController.h */,
+				B80557C81F29729E0012AF22 /* DetailViewController.m */,
+				B80557C91F29729E0012AF22 /* DetailViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B86888681F1EEF9D00330B45 /* CollectActivity */ = {
@@ -808,9 +818,6 @@
 				E8AE51BE1DE29DEF00E3A292 /* SGFocusImageFrame.m */,
 				E8AE51BF1DE29DEF00E3A292 /* SGFocusImageItem.h */,
 				E8AE51C01DE29DEF00E3A292 /* SGFocusImageItem.m */,
-				E8AE51C11DE29DEF00E3A292 /* TopicItem.h */,
-				E8AE51C21DE29DEF00E3A292 /* TopicItem.m */,
-				E8AE51C31DE29DEF00E3A292 /* TopicItem.xib */,
 			);
 			path = LoopScrollView;
 			sourceTree = "<group>";
@@ -1037,6 +1044,7 @@
 		E8AE549F1DE29EE100E3A292 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B80557C61F2972870012AF22 /* Detail */,
 				B86888F21F1F56B800330B45 /* LoginOrRegist */,
 				B86888691F1EEFA300330B45 /* InterestLabel */,
 				B86888681F1EEF9D00330B45 /* CollectActivity */,
@@ -1219,7 +1227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8AE53C41DE29DF000E3A292 /* TopicItem.xib in Resources */,
+				B80557CB1F29729E0012AF22 /* DetailViewController.xib in Resources */,
 				E8AE53EE1DE29DF000E3A292 /* MJRefresh.bundle in Resources */,
 				B868886E1F1EEFC600330B45 /* InsterestLabelViewController.xib in Resources */,
 				E8AE54E81DE2D72A00E3A292 /* IndexItemTableViewCell.xib in Resources */,
@@ -1273,7 +1281,6 @@
 				E8AE54981DE29DF500E3A292 /* UIViewController+Toast.m in Sources */,
 				E8AE543D1DE29DF000E3A292 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				E8AE542D1DE29DF000E3A292 /* SDWebImageDecoder.m in Sources */,
-				E8AE53C31DE29DF000E3A292 /* TopicItem.m in Sources */,
 				E8AE54961DE29DF500E3A292 /* UIImageView+imageViewWithGIF.m in Sources */,
 				E8AE53EC1DE29DF000E3A292 /* MJRefreshNormalHeader.m in Sources */,
 				E8AE542E1DE29DF000E3A292 /* SDWebImageDownloader.m in Sources */,
@@ -1292,6 +1299,7 @@
 				E8AE542C1DE29DF000E3A292 /* SDWebImageCompat.m in Sources */,
 				B876483F1F1F58FB0028AE1A /* NSManagedObject+MagicalDataImport.m in Sources */,
 				E8AE54311DE29DF000E3A292 /* SDWebImagePrefetcher.m in Sources */,
+				B80557CA1F29729E0012AF22 /* DetailViewController.m in Sources */,
 				E8AE54371DE29DF000E3A292 /* UIImageView+WebCache.m in Sources */,
 				E8AE54971DE29DF500E3A292 /* UIPlaceHolderTextView.m in Sources */,
 				E8AE53611DE29DF000E3A292 /* CommonUtil+Check.m in Sources */,

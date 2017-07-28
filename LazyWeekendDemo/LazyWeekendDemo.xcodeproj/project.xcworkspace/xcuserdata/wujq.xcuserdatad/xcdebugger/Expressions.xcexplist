@@ -3,12 +3,45 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[ChangeMsgViewController clickForSave]:ChangeMsgViewController.m">
+         contextName = "-[LoginViewController clickForLogin:]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__36-[SGFocusImageFrame setupViewsWith:]_block_invoke:SGFocusImageFrame.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.sex">
+               value = "self.imageType">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InsterestLabelViewController viewDidLoad]:InsterestLabelViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SGFocusImageFrame updateFrame:focusImageType:]:SGFocusImageFrame.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SGFocusImageFrame switchFocusImageItems:]:SGFocusImageFrame.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_scrollInterval">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InsterestLabelViewController collectionView:didSelectItemAtIndexPath:]:InsterestLabelViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[IndexViewController tableView:cellForRowAtIndexPath:]:IndexViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[ChangeMsgViewController getData]:ChangeMsgViewController.m">
@@ -22,32 +55,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[LoginViewController clickForLogin:]:LoginViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[InsterestLabelViewController clickForSave]:InsterestLabelViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[IndexViewController collectionActivity:]:IndexViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[InsterestLabelViewController viewDidLoad]:InsterestLabelViewController.m">
+         contextName = "-[ChangeMsgViewController clickForSave]:ChangeMsgViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.dataArray">
+               value = "self.sex">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[InsterestLabelViewController collectionView:didSelectItemAtIndexPath:]:InsterestLabelViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.dataArray">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[CollectionsViewController tableView:cellForRowAtIndexPath:]:CollectionsViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[RegistViewController clickForRegist:]:RegistViewController.m">
@@ -56,6 +69,15 @@
                value = "delegate.userId">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[IndexViewController collectionActivity:]:IndexViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CollectionsViewController tableView:cellForRowAtIndexPath:]:CollectionsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[InsterestLabelViewController clickForSave]:InsterestLabelViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

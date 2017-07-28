@@ -25,7 +25,7 @@
 
 @end
 
-static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
+static int SWITCH_FOCUS_PICTURE_INTERVAL = 3.0f; //switch interval time
 
 @implementation DSLoopDbImageFrame
 
@@ -160,6 +160,7 @@ static int SWITCH_FOCUS_PICTURE_INTERVAL = 5; //switch interval time
             [imageView addGestureRecognizer:tapGestureRecognize];
             
             [_scrollView addSubview:imageView];
+            
             
             //商品表示
             if (_displayType == 2) {

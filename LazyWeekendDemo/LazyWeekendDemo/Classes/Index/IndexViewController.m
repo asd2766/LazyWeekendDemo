@@ -10,7 +10,7 @@
 #import "IndexItemTableViewCell.h"
 #import "MenuViewController.h"
 #import "Collections+CoreDataClass.h"
-
+#import "DetailViewController.h"
 @interface IndexViewController ()<IndexItemTableViewCellDelegate> {
     CGFloat menuHeight;
 }
@@ -240,7 +240,23 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"哎呦我被点击啦");
+    if (![[CommonUtil currentUtil] isLogin]) {
+        return;
+    }
+    NSString *userId = [[CommonUtil currentUtil] getLoginUserid];
+    NSDictionary *activityDic = self.dataArray[indexPath.row];
+    Collections *collectionAct = [Collections MR_createEntity];
+    collectionAct.userId = [userId intValue];
+    collectionAct.activityTitle = activityDic[@"title"];
+    collectionAct.activityId = [activityDic[@"id"] intValue];
+    collectionAct.activityImageUrl = activityDic[@"imageUrl"];
+    collectionAct.activityTime = activityDic[@"time"];
+    collectionAct.activityPrice = activityDic[@"price"];
+    collectionAct.activityLocation = activityDic[@"location"];
     
+    DetailViewController *nextController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    nextController.detailDic = collectionAct;
+    [self.navigationController pushViewController:nextController animated:YES];
 }
 
 #pragma mark - action

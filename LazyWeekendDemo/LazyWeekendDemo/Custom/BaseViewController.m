@@ -188,12 +188,8 @@
         }
         
         self.noDataView.frame = frame;
-        CGRect frame1 = self.noDataView.contentView.frame;
         [self.noDataView setNeedsLayout];
         [view addSubview:self.noDataView];
-        NSLog(@"x: %f, y: %f, w: %f, h: %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
-        NSLog(@"x: %f, y: %f, w: %f, h: %f", frame1.origin.x, frame1.origin.y, frame1.size.width, frame1.size.height);
-        NSLog(@"x: %f, y: %f, w: %f, h: %f", view.frame.origin.x, view.frame.origin.y, view.frame.size.width, view.frame.size.height);
     }else{
         
         if (self.noDataView.superview) {
